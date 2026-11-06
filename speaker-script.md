@@ -1,6 +1,6 @@
 # Le Dossier IA: speaker script (about 5 minutes)
 
-**How to drive it.** There's no control bar: use the **right and left arrows** (or space). Each slide has three parts, so it's **two clicks per slide**, and each part plays by itself. The thin strip along the top of the bottom band is your **timeline**: blue segments are done, red is where you are, grey is still to come, with a gap between sections (slides 1–3, slide 4, the video and Merci, the annexes). Click a segment to jump there. Keys: **N** notes, **Q** Ask Claude, **1–3** slides, **4** slide 4, **E** the video. Full screen: your browser's usual shortcut.
+**How to drive it.** There's no control bar: use the **right and left arrows** (or space). Each slide has three parts, so it's **two clicks per slide**, and each part plays by itself. The thin strip along the top of the bottom band is your **timeline**: blue segments are done, red is where you are, grey is still to come, with a gap between sections (slides 1–3, slide 4, the video and Merci, the annexes). Click a segment to jump there. Keys: **F** full screen (press again to leave), **N** notes, **Q** Ask Claude, **1–3** slides, **4** slide 4, **E** the video.
 
 Words in **bold** get a little more stress. Your name and the exercise question sit in the band at the bottom of every slide, so the room never loses the thread.
 

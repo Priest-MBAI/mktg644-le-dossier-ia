@@ -2,6 +2,8 @@
 
 Alan Asman's class deck for MKTG 644 AI-Powered Marketing (Prof Ernst Osinga), SMU.
 
+> **Disclaimer.** This is a class project for discussion in MKTG 644 AI-Powered Marketing (SMU). The scenario is fictitious: the French government campaign, the "365 €" ad, the delivery model and all campaign figures were invented for the exercise. Any resemblance to real campaigns, organisations or people is purely coincidental. The research, laws, statistics and company facts it discusses are real and cited in Annexe B. This project is not affiliated with or endorsed by the French government, the Banque de France, the CAF, Mistral AI or SMU.
+
 - **Slides 1–3, Session 9 exercise:** risks of a French government financial-literacy ad written by generative AI and delivered by a cost-optimising algorithm, mapped by stakeholder and severity.
 - **Slide 4, Session 10 exercise:** the same campaign redesigned as an agentic workflow, with the human role.
 - **Video and close:** a 91-second, captioned epilogue on Mistral AI recommending a French, open-weight stack for the agents. It ends on a Merci card.
@@ -41,6 +43,6 @@ Render the videos:
 cd video && npm install && npx remotion render MistralEpilogue out/mistral-epilogue.mp4
 ```
 
-Keys in the deck: arrows to move, N notes, Q Ask Claude, 1–3 and 4 for slides, E for the video.
+Keys in the deck: arrows to move, F full screen, N notes, Q Ask Claude, 1–3 and 4 for slides, E for the video.
 
 Photos: Wikimedia Commons (credits in Annexe B). Class exercise; not a French government publication and not affiliated with Mistral AI.
