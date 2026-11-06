@@ -1,0 +1,9 @@
+.DS_Store
+index-v*.html
+video/node_modules/
+video/out/
+
+# private build inputs and outputs that carry them
+private/
+course-slides/
+Le Dossier IA.html

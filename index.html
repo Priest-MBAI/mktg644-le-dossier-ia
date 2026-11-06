@@ -1,0 +1,1323 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Le Dossier IA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="MKTG 644 Session 9 class exercise by Alan Asman: risks of a French government financial-literacy ad written by generative AI and delivered by a cost-optimising algorithm, mapped by stakeholder and severity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600;6..96,800&family=Inria+Sans:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Hallmark v2.0.0 | custom direction: affiche and ministry dossier for a lecture room | genre: editorial | signature: the ad as a full-height affiche, then the delivery map that fills itself | stage deck, 3 slides x 3 beats plus annex */
+/* waive 24b: spacing is tuned in stage pixels for a 1920x1080 projected deck. waive 58: a class deck names eight risks on screen. */
+/* critique: projector first. Body text 32px or more on the stage, two clicks per slide, colour blocks carry meaning (bleu France = the brief and the close, rouge = the failure). */
+/* Layout concept: a 1920x1080 stage scaled to fit; each slide holds three full-screen beats, one click each; the nav floats and hides itself while presenting. */
+:root{
+  --paper:#F1EBDF; --surface:#FFFDF8; --ink:#15131C; --muted:#423E4C; --line:#CFC5B2;
+  --vert:#1F5A45; --or:#A27A35; --or-soft:#E8D9B5; --nuit:#0A0F52; --tile:#FBFAF5; --grout:#DCD6C8; --band:#FFFDF8; --band-ink:#15131C; --wm:rgba(162,122,53,.10);
+  --bleu:#000091; --bleu-soft:#E3E3FD; --on-bleu:#F8F8FF; --rouge:#C8000D; --ok:#0F6E33; --warn:#9E3A00;
+  --ground-bleu:#000091; --ground-rouge:#B8000C; --on-ground:#F8F8FF; --on-ground-2:#D9D9FF; --on-rouge-2:#FFE3E3;
+  --sev-high:#FFB8B2; --sev-med:#FFDDD7; --sev-low:#E6E6EE;
+  --gA:#2F2FC8; --gB:#1F7A5A; --gC:#C9541E;
+  --plaque:#23407A; --plaque-frame:#2E6B47; --plaque-ink:#F8F8FF;
+  --poster:#FBFBFF; --poster-ink:#0E0E14; --poster-blue:#000091; --poster-muted:#4A4A57; --stamp-ok:#0F6E33; --on-rouge-card:rgba(255,255,255,.12);
+  --nav-bg:rgba(241,235,223,.88); --shadow:0 24px 60px rgba(0,0,64,.18); --plaque-shadow:0 6px 16px rgba(0,0,40,.25); --poster-shadow:0 30px 60px rgba(0,0,30,.45); --scrim:rgba(10,10,30,.55);
+  --f-head:'Bodoni Moda','Didot','Bodoni 72',Georgia,serif;
+  --f-body:'Inria Sans','Segoe UI',system-ui,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#12111A; --surface:#1C1B27; --ink:#F2EEE6; --muted:#C9C3D3; --line:#3E3B4E; --vert:#7FC7A6; --or:#D9B66C; --or-soft:#3A3122; --tile:#1A1A22; --grout:#2A2935; --band:#1C1B27; --band-ink:#F2EEE6; --wm:rgba(217,182,108,.10);
+    --bleu:#A3A3FF; --bleu-soft:#24245A; --on-bleu:#0B0B20; --rouge:#FF7A7A; --ok:#5CD694; --warn:#FFA05C;
+    --sev-high:#73202C; --sev-med:#4A2230; --sev-low:#262640;
+    --gA:#7C7CFF; --gB:#3FAF86; --gC:#E0703A;
+    --nav-bg:rgba(16,16,30,.86); --shadow:0 24px 60px rgba(0,0,0,.5);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#12111A; --surface:#1C1B27; --ink:#F2EEE6; --muted:#C9C3D3; --line:#3E3B4E; --vert:#7FC7A6; --or:#D9B66C; --or-soft:#3A3122; --tile:#1A1A22; --grout:#2A2935; --band:#1C1B27; --band-ink:#F2EEE6; --wm:rgba(217,182,108,.10);
+  --bleu:#A3A3FF; --bleu-soft:#24245A; --on-bleu:#0B0B20; --rouge:#FF7A7A; --ok:#5CD694; --warn:#FFA05C;
+  --sev-high:#73202C; --sev-med:#4A2230; --sev-low:#262640;
+  --gA:#7C7CFF; --gB:#3FAF86; --gC:#E0703A;
+  --nav-bg:rgba(16,16,30,.86); --shadow:0 24px 60px rgba(0,0,0,.5);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%;overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);overflow:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,p,figure,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+a{color:inherit;text-underline-offset:.15em;text-decoration-thickness:from-font}
+:focus-visible{outline:4px solid var(--bleu);outline-offset:4px;transition:none}
+img{display:block;max-width:100%}
+[hidden]{display:none!important}
+
+/* ---------- stage ---------- */
+.vp{position:fixed;inset:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px) 0}
+.stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform:translate(-50%,-50%) scale(var(--s,.5));transform-origin:center;background:var(--paper);overflow:hidden}
+.slide{position:relative}
+.js .slide{position:absolute;inset:0;visibility:hidden}
+.js .slide.on{visibility:visible}
+.beat{position:relative;min-height:1080px;padding:64px 110px 112px;display:flex;flex-direction:column;gap:36px;background:var(--paper);color:var(--ink)}
+.js .beat{position:absolute;inset:0;min-height:0;visibility:hidden;opacity:0;transition:opacity .5s var(--ease),visibility 0s .5s}
+.js .beat.on{visibility:visible;opacity:1;transition:opacity .5s var(--ease)}
+.g-bleu{background:var(--ground-bleu);color:var(--on-ground)}
+.g-rouge{background:var(--ground-rouge);color:var(--on-ground)}
+html:not(.js) body{overflow:auto}
+html:not(.js) .vp{position:static}
+html:not(.js) .stage{position:relative;left:auto;top:auto;height:auto;transform:none;overflow:visible}
+
+/* sequence: each part of a beat arrives in turn */
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(var(--w,1))}}
+.js .beat.on .seq{animation:rise .8s var(--ease) both;animation-delay:calc(var(--i,0) * 160ms + 120ms)}
+
+/* type */
+.hx{font:800 84px/1.04 var(--f-head);letter-spacing:-.012em;text-wrap:balance;max-width:1340px;overflow-wrap:break-word;min-width:0}
+.hx-xl{font:800 116px/1.0 var(--f-head);letter-spacing:-.018em;text-wrap:balance;overflow-wrap:break-word;min-width:0}
+.lead{font-size:40px;line-height:1.3;max-width:1340px}
+.body{font-size:34px;line-height:1.35}
+.small{font-size:28px;line-height:1.35;color:var(--muted)}
+.g-bleu .small,.g-bleu .lead{color:var(--on-ground-2)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.ref{font:500 .5em var(--f-mono);vertical-align:super;text-decoration:none;padding:0 .1em}
+
+/* Paris street plaque as the chapter label */
+.plaque{position:absolute;right:110px;top:52px;z-index:2;background:var(--plaque);color:var(--plaque-ink);border:7px solid var(--plaque-frame);border-radius:12px;
+  box-shadow:inset 0 0 0 4px var(--plaque),inset 0 0 0 7px var(--plaque-ink),var(--plaque-shadow);padding:14px 30px 12px;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:300px}
+.plaque small{font:400 22px/1.1 var(--f-body)}
+.plaque b{font:700 40px/1.1 var(--f-body)}
+
+/* ---------- slide 1 ---------- */
+.s1a{display:grid;grid-template-columns:minmax(0,1fr) 640px;gap:80px;height:100%}
+.s1a .left{display:flex;flex-direction:column;gap:30px;justify-content:center;min-width:0}
+.poster-wrap{display:flex;flex-direction:column;gap:16px;padding-top:96px}
+.poster{background:var(--poster);color:var(--poster-ink);height:720px;padding:48px 48px 40px;display:flex;flex-direction:column;gap:22px;transform:rotate(-1.6deg);box-shadow:var(--poster-shadow);position:relative}
+.poster::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:linear-gradient(90deg,var(--ground-bleu) 0 33.3%,var(--poster) 33.3% 66.6%,var(--ground-rouge) 66.6%)}
+.poster .num{font:800 200px/.9 var(--f-head);color:var(--poster-blue);letter-spacing:-.03em;margin-top:14px;white-space:nowrap}
+.poster .line{font:800 58px/1.05 var(--f-head)}
+.poster .sub{font:400 34px/1.3 var(--f-body)}
+.poster .cta{align-self:flex-start;background:var(--poster-blue);color:var(--poster);font:700 34px/1 var(--f-body);padding:20px 30px;margin-top:auto}
+.poster .ai{font:500 22px/1.2 var(--f-mono);color:var(--poster-muted)}
+.poster-cap{font-size:26px;color:var(--on-ground-2);padding-left:6px}
+
+.pipe{display:grid;grid-template-columns:minmax(0,1fr) 230px minmax(0,1fr) 70px 420px;align-items:stretch;margin-top:20px}
+.mc{border:3px solid var(--ink);background:var(--surface);padding:34px 36px;display:flex;flex-direction:column;gap:14px}
+.mc small{font-size:28px;color:var(--muted)}
+.mc h3{font:800 64px/1.02 var(--f-head)}
+.mc p{font-size:34px;line-height:1.32;color:var(--muted)}
+.mc.cit{background:var(--ground-bleu);border-color:var(--ground-bleu);color:var(--on-ground)}
+.mc.cit small,.mc.cit p{color:var(--on-ground-2)}
+.gap{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;text-align:center;padding:0 10px}
+.gap .dash{width:100%;border-top:6px dashed var(--rouge)}
+.gap b{font:700 32px/1.15 var(--f-body);color:var(--rouge)}
+.gap span{font-size:24px;color:var(--rouge)}
+.arrow{display:flex;align-items:center;justify-content:center;font:700 48px/1 var(--f-body);color:var(--muted)}
+.task{border-top:3px solid var(--ink);padding-top:22px;margin-top:auto}
+
+.rcols{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.rcol h3{font:800 46px/1.1 var(--f-head);color:var(--bleu);margin-bottom:18px}
+.rrow{display:grid;grid-template-columns:78px minmax(0,1fr);gap:20px;align-items:start;padding:12px 0;border-top:2px solid var(--line);text-align:left;width:100%}
+.rid{font:500 28px/1 var(--f-mono);background:var(--ground-bleu);color:var(--on-ground);padding:12px 0;text-align:center}
+.rrow b{display:block;font:700 36px/1.15 var(--f-body)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.tg{font:400 24px/1 var(--f-body);border:2px solid var(--line);padding:6px 10px;color:var(--muted)}
+.tg.k{border-color:var(--bleu);color:var(--bleu)}
+
+/* ---------- slide 2 ---------- */
+.s2a{display:grid;grid-template-columns:740px minmax(0,1fr);gap:80px;flex:1;min-height:0}
+.s2a svg{width:100%;height:auto;max-height:700px;display:block}
+.right{display:flex;flex-direction:column;gap:20px;min-width:0}
+.budget small{font-size:30px;color:var(--muted)}
+.budget output{display:block;font:500 124px/1 var(--f-mono);margin-top:6px}
+input[type=range]{width:100%;height:40px;accent-color:var(--bleu);margin:0}
+.legend{display:flex;flex-direction:column;gap:12px}
+.legend div{display:grid;grid-template-columns:34px 1fr auto;gap:16px;align-items:center;font-size:36px}
+.legend .sw{width:30px;height:30px;border-radius:50%}
+.legend .mono{color:var(--muted);font-size:34px}
+.verdict{font:800 58px/1.05 var(--f-head);color:var(--rouge)}
+
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:10px}
+.kpi{background:var(--surface);border:3px solid var(--line);padding:40px 44px;display:flex;flex-direction:column;gap:16px}
+.kpi small{font-size:32px;color:var(--muted)}
+.kpi .v{font:500 120px/1 var(--f-mono);letter-spacing:-.03em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.kpi .t{font-size:30px;color:var(--muted)}
+.ok{font:700 36px/1 var(--f-body);color:var(--ok)}
+.mock{align-self:flex-start;font:500 26px/1 var(--f-mono);border:2px solid var(--rouge);color:var(--rouge);padding:8px 14px}
+
+.s2c{display:grid;grid-template-columns:minmax(0,1fr) 600px;gap:70px;flex:1;min-height:0}
+.bars{display:flex;flex-direction:column;gap:30px;position:relative}
+.bar{display:grid;grid-template-columns:400px minmax(0,1fr) 200px;gap:24px;align-items:center}
+.bar b{font:700 38px/1.1 var(--f-body)}
+.bar .st{display:block;font:700 28px/1.2 var(--f-body);color:var(--on-rouge-2);margin-top:4px}
+.bar .track{position:relative;height:62px}
+.bar .fill{height:100%;background:var(--on-ground);transform-origin:0 50%;transform:scaleX(var(--w))}
+.js .beat.on .bar .fill{animation:grow 1.2s var(--ease) both;animation-delay:calc(var(--i,0) * 220ms + 500ms)}
+.bar .pct{font:500 64px/1 var(--f-mono);text-align:right;white-space:nowrap}
+.bar.zero .pct{font-size:96px}
+.target{position:absolute;top:-10px;bottom:-10px;border-left:4px dashed var(--on-ground);left:calc(424px + (100% - 648px) * .6)}
+.target span{position:absolute;top:-38px;left:10px;font-size:24px;white-space:nowrap}
+.g-rouge .body{color:var(--on-ground)}
+.g-rouge .small{color:var(--on-rouge-2)}
+.photos{display:flex;flex-direction:column;gap:22px}
+.ph{display:flex;flex-direction:column;gap:10px}
+.ph .fr{aspect-ratio:16/9;overflow:hidden;max-width:100%}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph figcaption{font-size:24px;line-height:1.3}
+.ph .cr{display:block;font-size:20px;opacity:.85;margin-top:2px}
+
+/* ---------- slide 3 ---------- */
+.matrix{display:grid;grid-template-columns:270px repeat(3,minmax(0,1fr));gap:10px}
+.mh{display:flex;flex-direction:column;justify-content:flex-end;padding:0 6px 8px}
+.mh b{font:800 46px/1 var(--f-head)}
+.mh span{font-size:24px;color:var(--muted)}
+.mh.key{font-size:24px;line-height:1.25;color:var(--muted);justify-content:flex-end}
+.who{display:flex;align-items:center;padding:0 22px;border:3px solid var(--ink);background:var(--surface);font:700 34px/1.15 var(--f-body)}
+.cell{padding:10px;display:flex;flex-wrap:wrap;align-content:flex-start;gap:8px;min-height:124px}
+.cell.l{background:var(--sev-low)} .cell.m{background:var(--sev-med)} .cell.h{background:var(--sev-high)}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:2px solid var(--ink);padding:4px 12px 4px 4px;font:700 26px/1.1 var(--f-body);white-space:nowrap;transition:transform .2s var(--ease)}
+.chip .rid{font-size:20px;padding:8px 7px}
+.chip:hover{transform:translateY(-2px)}
+.chip:active{transform:scale(.97)}
+
+.gov{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 420px;gap:40px;flex:1;min-height:0}
+.card{padding:40px 44px;display:flex;flex-direction:column;gap:18px;border:3px solid var(--ink);background:var(--surface)}
+.card.b{background:var(--ground-bleu);border-color:var(--ground-bleu);color:var(--on-ground)}
+.card h3{font:800 54px/1.05 var(--f-head)}
+.card .ids{font:500 28px/1.2 var(--f-mono);opacity:.85}
+.card .rule{font:700 36px/1.25 var(--f-body)}
+.card li{font-size:32px;line-height:1.3;padding:14px 0 0 34px;position:relative}
+.card li::before{content:"";position:absolute;left:0;top:30px;width:16px;height:16px;background:currentColor}
+.gov .photos .ph figcaption{color:var(--muted)}
+
+.close{display:flex;flex-direction:column;gap:34px;justify-content:center;height:100%;max-width:1500px}
+.close ol{display:flex;flex-direction:column;gap:26px;counter-reset:n}
+.close li{font:700 48px/1.2 var(--f-body);padding-left:90px;position:relative;counter-increment:n}
+.close li::before{content:counter(n);position:absolute;left:0;top:-6px;font:800 72px/1 var(--f-head);color:var(--on-ground-2)}
+.merci{font:800 104px/1 var(--f-head);margin-top:20px}
+
+/* ---------- annex ---------- */
+.agrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:70px;flex:1;min-height:0}
+.acol{display:flex;flex-direction:column;gap:24px;min-width:0}
+table{border-collapse:collapse;width:100%;font-size:30px}
+th{font:700 26px/1.2 var(--f-body);color:var(--muted);text-align:left;padding:8px 12px;border-bottom:3px solid var(--ink)}
+td{padding:12px;border-bottom:2px solid var(--line)}
+td.n{font-family:var(--f-mono);white-space:nowrap}
+.bad{color:var(--rouge);font-weight:700}
+.good{color:var(--ok);font-weight:700}
+.prio{display:grid;grid-template-columns:160px 1fr 1fr;gap:8px}
+.prio div{padding:16px 18px;font-size:26px;line-height:1.3;background:var(--surface);border:2px solid var(--line)}
+.prio .hd{background:none;border:0;font:700 24px/1.2 var(--f-body);color:var(--muted);display:flex;align-items:flex-end;padding:4px}
+.prio .do{background:var(--bleu-soft);border-color:var(--bleu)}
+.prio b{display:block;font-size:24px;color:var(--muted);margin-bottom:6px}
+.acol h3{font:800 40px/1.1 var(--f-head);color:var(--bleu)}
+.acol ul li{font-size:28px;line-height:1.35;margin-top:8px}
+.srcs{columns:2;column-gap:70px;font-size:24px;line-height:1.35}
+.srcs li{break-inside:avoid;margin-bottom:12px;display:grid;grid-template-columns:50px 1fr}
+.srcs li span{font:500 22px/1.5 var(--f-mono);color:var(--muted)}
+
+/* ---------- risk sheet (opens on click, for questions) ---------- */
+.scrim{position:absolute;inset:0;background:var(--scrim);z-index:8}
+.sheet{position:absolute;right:110px;top:70px;bottom:70px;width:900px;z-index:9;background:var(--surface);color:var(--ink);box-shadow:var(--shadow);padding:44px 52px;display:flex;flex-direction:column;gap:18px;overflow:auto}
+.sheet .top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.sheet h3{font:800 52px/1.05 var(--f-head)}
+.sheet h4{font:700 28px/1.2 var(--f-body);color:var(--bleu);margin:6px 0 0}
+.sheet p{font-size:30px;line-height:1.38}
+.sev{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px 22px;align-items:center;font-size:30px}
+.sev .sc{font:500 28px/1 var(--f-mono);color:var(--muted)}
+.badge{font:700 24px/1 var(--f-body);padding:8px 14px;color:var(--ink)}
+.badge.h{background:var(--sev-high)} .badge.m{background:var(--sev-med)} .badge.l{background:var(--sev-low)}
+.stamp{font:800 36px/1 var(--f-head);color:var(--rouge);border:4px solid var(--rouge);padding:10px 16px 8px;transform:rotate(-5deg);white-space:nowrap}
+.xbtn{align-self:flex-start;font:700 26px/1 var(--f-body);border:2px solid var(--ink);padding:12px 18px}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:20;display:flex;align-items:center;gap:8px;padding:8px;background:var(--nav-bg);
+  backdrop-filter:blur(20px) saturate(170%);-webkit-backdrop-filter:blur(20px) saturate(170%);border-radius:14px;box-shadow:var(--shadow);transition:opacity .4s var(--ease),transform .4s var(--ease);max-width:calc(100% - 32px)}
+.js .nav.idle{opacity:0;transform:translate(-50%,12px);pointer-events:none}
+.nav button{height:48px;min-width:48px;padding:0 16px;font:700 18px/1 var(--f-body);border-radius:9px;color:var(--ink);transition:background-color .25s var(--ease),transform .12s var(--ease)}
+.nav button:hover:not(:disabled){background:var(--bleu-soft)}
+.nav button:active{transform:scale(.97)}
+.nav button[aria-current=true]{background:var(--ground-bleu);color:var(--on-ground)}
+.nav button:disabled{color:var(--line);cursor:not-allowed}
+.nav .big{background:var(--ink);color:var(--paper);min-width:110px}
+.nav .big:hover:not(:disabled){background:var(--bleu);color:var(--on-bleu)}
+.nav .pos{font:500 16px/1.2 var(--f-mono);color:var(--muted);padding:0 8px;white-space:nowrap}
+.nav .sep{width:1px;height:28px;background:var(--line)}
+.nav .notes-b[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+@media (max-width:820px){ .nav .pos,.nav .notes-b{display:none} .nav button{padding:0 10px;min-width:40px} }
+.notes{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);width:min(900px,calc(100% - 32px));max-height:42vh;overflow:auto;background:var(--surface);color:var(--ink);border:1px solid var(--line);box-shadow:var(--shadow);padding:18px 22px;z-index:21;font-size:17px;line-height:1.55;border-radius:12px}
+.notes h4{font:700 15px/1.2 var(--f-body);color:var(--muted);margin:0 0 6px}
+.notes p{margin:0 0 8px}
+.notes strong{color:var(--bleu)}
+
+/* ---------- v3: pictures, price tags, map with report, charted annex ---------- */
+.beat.tight{gap:26px}
+.pipe .mc{overflow:hidden;padding:28px 32px;gap:10px}
+.pipe .mc p{font-size:30px}
+.pipe .mc h3{font-size:58px}
+.mimg{height:150px;overflow:hidden;margin:-28px -32px 8px;background:var(--line)}
+.mimg img{width:100%;height:100%;object-fit:cover}
+.mposter{background:var(--poster);color:var(--poster-ink);display:flex;flex-direction:column;justify-content:center;gap:8px;padding:14px 28px;border-bottom:3px solid var(--line)}
+.mp-num{font:800 68px/.9 var(--f-head);color:var(--poster-blue)}
+.mp-line{font:800 28px/1.1 var(--f-head)}
+.mp-ai{font:500 18px/1 var(--f-mono);color:var(--poster-muted)}
+.gap{padding-top:0}
+.facts{display:grid;grid-template-columns:280px repeat(3,minmax(0,1fr));gap:44px;border-top:3px solid var(--ink);padding-top:16px;align-items:start}
+.facts .fh{font:800 34px/1.15 var(--f-head)}
+.facts b{display:block;font:500 54px/1 var(--f-mono);color:var(--bleu);margin-bottom:8px;letter-spacing:-.02em}
+.facts span{font-size:26px;line-height:1.28;color:var(--muted)}
+.tally{display:flex;gap:90px}
+.tally small{display:block;font-size:28px;color:var(--muted)}
+.tally output{font:500 80px/1 var(--f-mono);letter-spacing:-.02em}
+.lanes{display:flex;flex-direction:column}
+.lane{display:grid;grid-template-columns:200px 330px minmax(0,1fr) 230px;gap:26px;align-items:center;padding:20px 0;border-top:2px solid var(--line);position:relative}
+.etq{position:relative;justify-self:start;background:var(--surface);border:4px solid var(--g);padding:10px 18px 10px 42px;transform:rotate(-3deg);display:flex;flex-direction:column}
+.etq::before{content:"";position:absolute;left:12px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;border:3px solid var(--g);background:var(--paper)}
+.etq b{font:500 50px/1 var(--f-mono);color:var(--ink)}
+.etq span{font-size:22px;color:var(--muted)}
+.ln b{display:block;font:700 38px/1.1 var(--f-body)}
+.ln span{font-size:26px;color:var(--muted)}
+.dots{display:flex;flex-wrap:wrap;gap:8px}
+.dot{width:48px;height:48px;border-radius:50%;border:4px solid var(--g);background:transparent;transition:background-color .2s var(--ease)}
+.dot.on{background:var(--g)}
+.dot.half{background:linear-gradient(90deg,var(--g) 50%,transparent 50%)}
+@keyframes pop{from{transform:scale(1.25)}to{transform:none}}
+.dot.pop{animation:pop .3s var(--ease)}
+.cnt{font:500 32px/1.2 var(--f-mono);text-align:right;white-space:nowrap}
+.lane-stamp{position:absolute;left:600px;top:50%;margin-top:-38px;font:800 46px/1 var(--f-head);color:var(--rouge);border:5px solid var(--rouge);padding:12px 20px 10px;transform:rotate(-6deg);background:var(--paper);white-space:nowrap}
+.js .lane-stamp{opacity:0}
+.js .lane-stamp.shown{animation:stampin .45s var(--ease) both}
+@keyframes stampin{from{opacity:0;transform:rotate(-6deg) scale(1.6)}to{opacity:1;transform:rotate(-6deg) scale(1)}}
+.s2b{display:grid;grid-template-columns:600px minmax(0,1fr);gap:90px;flex:1;min-height:0}
+.mapwrap svg{width:100%;height:auto;max-height:600px;display:block}
+.mlegend{display:flex;gap:22px;font-size:24px;margin-top:10px;white-space:nowrap}
+.mlegend i{display:inline-block;width:22px;height:22px;border-radius:50%;margin-right:10px;vertical-align:-3px}
+.kcol{display:flex;flex-direction:column;gap:22px;min-width:0}
+.krow{display:grid;grid-template-columns:minmax(0,1fr) auto 210px;gap:28px;align-items:center;border-top:3px solid var(--ink);padding-top:18px}
+.kl{font:700 36px/1.2 var(--f-body)}
+.kl small{display:block;font:400 26px/1.3 var(--f-body);color:var(--muted)}
+.kv{font:500 100px/1 var(--f-mono);white-space:nowrap;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.s2cl{display:flex;flex-direction:column;gap:30px;min-width:0}
+.evid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ev{background:var(--on-rouge-card);border:2px solid var(--on-rouge-2);padding:22px 26px;display:flex;flex-direction:column;gap:8px}
+.ev b{font:800 30px/1.1 var(--f-head)}
+.ev p{font-size:28px;line-height:1.3}
+.ph.big .fr{aspect-ratio:4/3}
+.ph.big figcaption{font-size:28px;line-height:1.3;color:var(--on-ground)}
+.ph.big .cr{font-size:22px}
+.s3c{display:grid;grid-template-columns:minmax(0,1fr) 540px;gap:80px;height:100%;align-items:center}
+.pw-close{padding-top:0}
+.poster.pmini{height:560px;padding:40px 40px 34px;gap:16px}
+.pmini .line{font-size:44px}
+.pmini .sub{font-size:28px}
+.pmini .num{font-size:140px}
+.pmini .cta{font-size:28px}
+.vstamp{position:absolute;right:-36px;bottom:10px;font:800 34px/1.05 var(--f-head);color:var(--stamp-ok);border:5px solid var(--stamp-ok);padding:12px 18px;transform:rotate(-8deg);text-align:center;background:var(--poster)}
+.js .beat.on .vstamp{animation:vstampin .45s var(--ease) both;animation-delay:1.7s}
+@keyframes vstampin{from{opacity:0;transform:rotate(-8deg) scale(1.6)}to{opacity:1;transform:rotate(-8deg) scale(1)}}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.tile{background:var(--surface);border:2px solid var(--line);padding:20px 24px;display:flex;flex-direction:column;gap:8px}
+.tile small{font-size:26px;color:var(--muted)}
+.tile b{font:500 54px/1 var(--f-mono);letter-spacing:-.02em}
+.tile span{font-size:24px}
+.tile.alert{border-color:var(--rouge)}
+.dgrid{display:grid;grid-template-columns:minmax(0,1fr) 680px;gap:56px;flex:1;min-height:0}
+.chartbox{margin:0}
+.chartbox figcaption{font:800 34px/1.1 var(--f-head);margin-bottom:10px}
+.chartbox svg{width:100%;height:auto;display:block}
+.clg{display:flex;gap:22px;font:400 24px/1.2 var(--f-body);margin-top:8px;color:var(--muted)}
+.clg i{display:inline-block;width:18px;height:18px;border-radius:50%;margin-right:8px;vertical-align:-2px}
+/* ---------- v4: Paris motifs, persistent band, full frames, keynote motion ---------- */
+.stage{background-color:var(--paper);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .4  0 0 0 0 .32  0 0 0 0 .2  0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E")}
+.beat{background:transparent;padding:56px 110px 112px}
+.g-bleu{background:var(--ground-bleu)} .g-rouge{background:var(--ground-rouge)}
+.wmark{position:absolute;right:-170px;bottom:-120px;width:760px;height:760px;pointer-events:none;color:var(--or);opacity:.16}
+.js .beat{transition:opacity .6s var(--ease),visibility 0s .6s}
+.js .beat.on{transition:opacity .6s var(--ease)}
+/* headline words rise out of a mask */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:.12em .02em .1em;margin:-.12em -.02em -.1em}
+.w>span{display:inline-block}
+.js .beat.on .w>span{animation:wordup .95s var(--ease) both;animation-delay:calc(var(--wi,0) * 55ms + 60ms)}
+@keyframes wordup{from{transform:translateY(112%)}to{transform:none}}
+/* photos drift */
+.js .beat.on .ph img,.js .beat.on .mimg img{animation:kb 10s cubic-bezier(.2,.6,.3,1) both}
+@keyframes kb{from{transform:scale(1.12)}to{transform:scale(1)}}
+/* guilloché, the engraving on French banknotes */
+.guil path{fill:none;stroke:currentColor;vector-effect:non-scaling-stroke}
+.js .beat.on .guil-cover,.js .beat.on .guil-mini{animation:bloom 2.4s cubic-bezier(.3,0,.2,1) both,spin 180s linear infinite}
+@keyframes bloom{from{clip-path:circle(0% at 50% 50%);opacity:0}to{clip-path:circle(71% at 50% 50%)}}
+.guil-cover{position:absolute;width:1040px;height:1040px;left:50%;top:50%;margin:-520px 0 0 -520px;color:#E3C27A;opacity:.75;z-index:0;animation:spin 180s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.poster-wrap{position:relative}
+.poster,.poster-cap{position:relative;z-index:1}
+/* persistent band: the dossier label on every beat */
+.band{position:absolute;left:0;right:0;bottom:0;height:76px;z-index:6;background:var(--band);color:var(--band-ink);display:flex;align-items:center;justify-content:space-between;gap:40px;padding:0 110px 0 110px}
+.band::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,var(--ground-bleu) 0 33.33%,var(--band) 33.33% 66.66%,var(--ground-rouge) 66.66%)}
+.bq{font:400 24px/1.25 var(--f-body);min-width:0;max-width:1260px}
+.bq b{font:500 20px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--or);margin-right:14px}
+.bn{display:flex;align-items:center;gap:14px;white-space:nowrap}
+.bn b{display:block;font:800 30px/1 var(--f-head);font-variation-settings:'opsz' 18}
+.bn small{display:block;font:400 18px/1.2 var(--f-body);color:var(--muted);margin-top:4px}
+.seal{width:60px;height:60px;color:var(--or)}
+.seal path{fill:none;stroke:currentColor;vector-effect:non-scaling-stroke;stroke-width:1}
+.seal text{font:800 54px var(--f-head);fill:var(--band-ink)}
+/* cover */
+.s1a .left{gap:28px}
+.kicker{font:500 24px/1.2 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:#D9B66C;display:flex;flex-direction:column;gap:6px}
+.kicker span{font:400 26px/1.2 var(--f-body);letter-spacing:0;text-transform:none;color:var(--on-ground-2)}
+.s1a .hx-xl{font-size:104px}
+.qbox{border:2px solid #D9B66C;padding:24px 30px 26px;position:relative;background:rgba(255,255,255,.05)}
+.qbox b{position:absolute;top:-17px;left:22px;background:var(--ground-bleu);padding:0 10px;font:500 22px/1.4 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:#D9B66C}
+.qbox p{font-size:34px;line-height:1.3}
+.byline{font:800 54px/1.05 var(--f-head);font-variation-settings:'opsz' 18;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px}
+.byline span{font:400 28px/1 var(--f-body);color:var(--on-ground-2)}
+.byline em{flex-basis:100%;font:400 26px/1.2 var(--f-body);font-style:normal;color:var(--on-ground-2)}
+.g-bleu .poster-cap{color:var(--on-ground-2)}
+/* slide 1 part 2: real poster thumbnail, cards fill the frame */
+.pipe{flex:1;min-height:0;margin-top:0}
+.pipe .mc{min-height:0}
+.pipe .mc .mimg{flex:1;height:auto;min-height:220px;margin:-28px -32px 10px}
+.mimg.mposter{position:relative;display:block;padding:0;background:var(--nuit);overflow:hidden}
+.guil-mini{position:absolute;width:520px;height:520px;left:50%;top:50%;margin:-260px 0 0 -260px;color:#D9B66C;opacity:.5}
+.poster.pthumb{position:absolute;left:50%;top:50%;width:620px;height:720px;transform:translate(-50%,-50%) scale(.36) rotate(-1.6deg);transform-origin:center}
+.facts b{font-size:68px}
+.facts span{font-size:28px}
+/* slide 1 part 3: risk rows fill the height */
+.rcols{flex:1;min-height:0}
+.rcol{display:flex;flex-direction:column;min-height:0}
+.rrow{flex:1;align-content:center;padding:10px 0}
+.rrow b{font-size:40px}
+.tg{font-size:24px}
+.rcol p.small{flex:1.3;margin-top:22px!important;background:var(--surface);border-left:8px solid var(--or);padding:24px 30px;font-size:30px;display:flex;flex-direction:column;justify-content:center}
+/* slide 2 part 1: the métro wall behind the buyer */
+.tiles-bg{background-color:var(--tile);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='84'%3E%3Crect width='160' height='84' fill='%23D9D2C2'/%3E%3Cg fill='%23FCFBF7'%3E%3Crect x='2' y='2' width='156' height='38' rx='7'/%3E%3Crect x='-78' y='44' width='156' height='38' rx='7'/%3E%3Crect x='82' y='44' width='156' height='38' rx='7'/%3E%3C/g%3E%3Cg fill='none' stroke='%23ECE7DC' stroke-width='3'%3E%3Crect x='6' y='6' width='148' height='30' rx='5'/%3E%3Crect x='-74' y='48' width='148' height='30' rx='5'/%3E%3Crect x='86' y='48' width='148' height='30' rx='5'/%3E%3C/g%3E%3C/svg%3E")}
+:root[data-theme="dark"] .tiles-bg{background-image:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tiles-bg{background-image:none}}
+.tiles-bg .hx{background:var(--tile);box-shadow:0 0 0 16px var(--tile);align-self:flex-start}
+.tally{background:var(--surface);align-self:flex-start;padding:16px 30px;border:2px solid var(--grout);gap:80px}
+.tally output{font-size:86px}
+.lanes{flex:1;min-height:0;gap:14px}
+.lane{flex:1;grid-template-columns:330px minmax(0,1fr) 250px;padding:18px 26px;border:2px solid var(--grout);background:var(--surface)}
+.lhead{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.ln b{font-size:36px}
+.dot{width:58px;height:58px}
+.dots{gap:10px}
+.cnt{font-size:34px}
+.lane-stamp{left:420px}
+.lanenote{background:var(--surface);align-self:flex-start;padding:8px 16px;font-size:26px}
+/* slide 2 part 2: bigger map */
+.s2b{grid-template-columns:760px minmax(0,1fr);align-items:center}
+.mapwrap svg{height:660px;width:auto;max-height:none;margin:0 auto}
+.mlegend{font-size:28px;justify-content:center}
+.krow .kv{font-size:112px}
+/* slide 2 part 3: fixed label overlap, photo fills */
+.target span{top:auto;bottom:-48px;font-size:26px}
+.s2c{align-items:stretch}
+.s2cl{justify-content:space-between}
+.bars{margin-bottom:40px}
+.ph.big{display:flex;flex-direction:column;min-height:0}
+.ph.big .fr{flex:1;aspect-ratio:auto;min-height:0}
+.ev p{font-size:30px}
+/* slide 3 part 1: matrix fills */
+.matrix{flex:1;min-height:0;grid-template-rows:auto repeat(4,minmax(0,1fr))}
+.who{font-size:38px}
+.chip{font-size:30px}
+.chip .rid{font-size:22px}
+.cell{align-content:center}
+/* slide 3 part 2 */
+.gov{align-items:stretch}
+.card li{font-size:34px}
+.card .rule{font-size:38px}
+.gov .photos .ph{flex:1;min-height:0}
+.gov .photos .fr{flex:1;aspect-ratio:auto;min-height:0}
+/* annex */
+.dgrid{align-items:stretch}
+/* v4 fit fixes */
+.lane{grid-template-columns:500px minmax(0,1fr) 220px;padding:12px 24px;gap:22px}
+.lhead{flex-direction:row;align-items:center;gap:22px}
+.etq b{font-size:44px}
+.ln b{font-size:32px}
+.ln span{font-size:24px}
+.dot{width:48px;height:48px}
+.dots{gap:7px}
+.cnt{font-size:30px}
+.lane-stamp{left:560px}
+.lanes{gap:12px}
+.tally{padding:12px 28px}
+.tally output{font-size:76px}
+.krow{grid-template-columns:minmax(0,1fr) auto 190px;gap:22px}
+.krow .kv{font-size:96px}
+.kl{font-size:34px}
+.mc.cit h3{font-size:48px}
+.pipe{grid-template-columns:minmax(0,1fr) 210px minmax(0,1fr) 60px 460px}
+.s2cl{gap:22px}
+.bars{gap:22px;margin-bottom:46px}
+.bar .pct{font-size:58px}
+.bar.zero .pct{font-size:84px}
+.ev{padding:18px 22px}
+.ev p{font-size:27px}
+.g-rouge .body{font-size:31px}
+.ph.big figcaption{font-size:24px}
+.ph.big .cr{font-size:19px}
+.gov .photos .fr,.ph.big .fr{position:relative}
+.gov .photos .fr img,.ph.big .fr img{position:absolute;inset:0}
+.gov .photos{min-height:0}
+/* v4.1: the tricolore, the cocarde, égalité */
+.flag-cover{background:linear-gradient(90deg,var(--ground-bleu) 0 1490px,var(--ground-rouge) 1490px)}
+.flag-close{background:linear-gradient(90deg,var(--ground-bleu) 0 1540px,var(--ground-rouge) 1540px)}
+.flag .guil-cover{color:#F1D28E}
+.band::before{height:10px}
+.seal{width:56px;height:56px}
+.egal{position:absolute;z-index:2;left:24px;top:24px;font:800 64px/1 var(--f-head);font-variation-settings:'opsz' 18;color:#FFFFFF;border:6px solid #FFFFFF;padding:12px 22px 8px;transform:rotate(-7deg);background:rgba(184,0,12,.82);white-space:nowrap}
+.js .beat.on .egal{animation:egalin .5s var(--ease) both;animation-delay:1.6s}
+@keyframes egalin{from{opacity:0;transform:rotate(-7deg) scale(1.7)}to{opacity:1;transform:rotate(-7deg) scale(1)}}
+.merci{font-size:88px;line-height:1.02}
+.merci span{display:block;font-size:64px;margin-top:10px;color:var(--on-ground-2)}
+/* ---------- Session 10: l'atelier agentique ---------- */
+.kick10{font:500 24px/1.3 var(--f-mono);color:var(--or);margin-bottom:-16px;max-width:1300px}
+.flow6{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:34px;flex:1;min-height:0}
+.fs{position:relative;background:var(--surface);border:3px solid var(--ink);padding:26px 24px;display:flex;flex-direction:column;gap:14px}
+.fs:not(:last-child)::after{content:"→";position:absolute;right:-30px;top:50%;margin-top:-24px;font:700 40px/1 var(--f-body);color:var(--muted)}
+.fs .fn{font-size:24px;color:var(--or)}
+.ico{width:72px;height:72px;fill:none;stroke:var(--ink);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.fs b{font:800 40px/1.05 var(--f-head);font-variation-settings:'opsz' 18}
+.fs span:last-child{font-size:28px;line-height:1.3;color:var(--muted)}
+.pain{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.pain p{background:var(--surface);border-left:10px solid var(--rouge);padding:20px 26px;font-size:30px;line-height:1.3}
+.pain b{color:var(--rouge)}
+.reinv{display:grid;grid-template-columns:340px minmax(0,1fr) 420px;gap:44px;flex:1;min-height:0;align-items:center}
+.goal{background:var(--surface);border:4px solid var(--or);padding:28px;display:flex;flex-direction:column;gap:12px}
+.who10,.arch,.rk{font:500 22px/1.2 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--or)}
+.goal b{font:800 40px/1.05 var(--f-head);font-variation-settings:'opsz' 18}
+.goal p{font-size:30px;line-height:1.3}
+.loop{position:relative;height:640px;min-width:0}
+.ring{position:absolute;inset:0;width:100%;height:100%}
+.ring ellipse{fill:none;stroke:var(--line);stroke-width:4}
+.ring .flowline{stroke:var(--bleu);stroke-width:5;stroke-dasharray:14 22}
+.js .beat.on .ring .flowline{animation:flow 2.4s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-72}}
+.ag{position:absolute;width:310px;background:var(--ground-bleu);color:var(--on-ground);padding:20px 24px;display:flex;flex-direction:column;gap:6px;box-shadow:var(--shadow)}
+.ag .arch{color:#E3C27A}
+.ag b{font:800 36px/1.05 var(--f-head);font-variation-settings:'opsz' 18}
+.ag p{font-size:25px;line-height:1.28;color:var(--on-ground-2)}
+.a1{left:0;top:0}.a2{right:0;top:0}.a3{right:0;bottom:0}.a4{left:0;bottom:0}
+.gate{position:absolute;right:120px;top:50%;transform:translateY(-50%) rotate(-4deg);background:var(--surface);border:5px solid var(--or);padding:14px 22px;text-align:center;z-index:2}
+.gate b{display:block;font:800 40px/1 var(--f-head);color:var(--or);font-variation-settings:'opsz' 18}
+.gate span{font:700 24px/1.2 var(--f-body)}
+.js .beat.on .gate{animation:stampin10 .5s var(--ease) both;animation-delay:1.4s}
+@keyframes stampin10{from{opacity:0;transform:translateY(-50%) rotate(-4deg) scale(1.6)}to{opacity:1;transform:translateY(-50%) rotate(-4deg) scale(1)}}
+.opps h3{font:800 44px/1.05 var(--f-head);color:var(--bleu);margin-bottom:14px;font-variation-settings:'opsz' 18}
+.opps li{font-size:30px;line-height:1.3;padding:12px 0 12px 34px;position:relative;border-top:2px solid var(--line)}
+.opps li::before{content:"";position:absolute;left:0;top:26px;width:16px;height:16px;background:var(--or)}
+.roles{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:26px;flex:1;min-height:0}
+.role{background:var(--surface);border:3px solid var(--ink);padding:24px 30px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.role b{font:700 36px/1.2 var(--f-body)}
+.role p{font-size:28px;line-height:1.3;color:var(--muted)}
+.role.keep{border-color:var(--vert);background:var(--surface)}
+.role.keep .rk{color:var(--vert)}
+.chain{background:var(--surface);border-left:12px solid var(--rouge);padding:20px 28px;font-size:31px;line-height:1.3}
+.chain b{color:var(--rouge)}
+/* ---------- épilogue video ---------- */
+.js .beat.epi-b.on{z-index:7}
+.epi-b{padding:0;background:#0A0F52}
+.epi-b video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#0A0F52}
+.epi-ctl{position:absolute;right:28px;top:28px;z-index:2;font:700 22px/1 var(--f-body);color:#fff;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.4);border-radius:10px;padding:12px 18px;opacity:0;transition:opacity .3s var(--ease)}
+.epi-b:hover .epi-ctl,.epi-ctl:focus-visible{opacity:1}
+/* ---------- no control bar: a timeline in the band instead ---------- */
+.nav{display:none!important}
+.notes{bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+.chat{bottom:16px}
+.band::before{display:none}
+.tl{position:absolute;left:0;right:0;top:0;height:16px;padding-top:4px;display:flex;gap:10px;background:var(--band)}
+.tl .tlg{display:flex;gap:3px;flex:var(--n,1)}
+.tl i{flex:1;background:var(--line);cursor:pointer;transition:background-color .4s var(--ease)}
+.tl i.past{background:var(--ground-bleu)}
+.tl i.cur{background:var(--ground-rouge)}
+/* v5: one story */
+.reco{background:var(--ground-bleu);color:var(--on-ground);padding:18px 28px;font-size:31px;line-height:1.3;border-left:12px solid #E3C27A}
+.reco b{color:#E3C27A}
+.flag-merci{background:linear-gradient(90deg,var(--ground-bleu) 0 1280px,var(--ground-rouge) 1280px)}
+.merci-end{display:flex;flex-direction:column;justify-content:center;gap:34px;height:100%;max-width:1100px}
+.cocarde{width:150px;height:150px}
+.merci-end .hx-xl{font-size:120px}
+.merci-q{font:800 72px/1.05 var(--f-head);font-variation-settings:'opsz' 18}
+.merci-q span{display:block;font:400 32px/1.3 var(--f-body);color:var(--on-ground-2);margin-top:10px}
+.roles{gap:20px}
+.role{padding:18px 28px}
+.role b{font-size:33px}
+.role p{font-size:27px}
+/* QR code to the shared deck */
+.byrow{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.qrbox{display:flex;align-items:center;gap:16px;background:#FFFFFF;color:#15131C;padding:12px 18px 12px 12px}
+.qrbox .qr{display:block}
+.qrbox span{font:700 22px/1.25 var(--f-body);max-width:170px}
+.qr-s .qr{width:190px;height:190px}
+.s1a .left{gap:22px}
+.qbox p{font-size:32px}
+.qr-l{position:absolute;right:170px;top:50%;transform:translateY(-55%);flex-direction:column;padding:22px;gap:14px}
+.qr-l .qr{width:330px;height:330px}
+.qr-l span{max-width:330px;text-align:center;font-size:26px}
+/* second sources part */
+.srcs .nolink{color:var(--ink)}
+/* v5 fit fixes */
+.s3c .close{gap:26px}
+.s3c .merci{font-size:70px;margin-top:6px}
+.s3c .merci span{font-size:36px;margin-top:8px}
+.roles{grid-template-rows:auto auto;flex:0 1 auto}
+.qr-l{top:46%;transform:translateY(-50%)}
+.qr-l .qr{width:290px;height:290px}
+/* corner QR on every slide (hidden during the video, large on the last card) */
+.qrc{position:absolute;right:34px;top:30px;z-index:6;background:#FFFFFF;color:#15131C;padding:8px 8px 6px;display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,40,.18);transition:opacity .4s var(--ease),width .5s var(--ease)}
+.qrc .qr{width:140px;height:140px;display:block;transition:width .5s var(--ease),height .5s var(--ease)}
+.qrc span{font:700 17px/1.2 var(--f-body)}
+.qrc em{display:none;font:400 22px/1.25 var(--f-body);font-style:normal;text-align:center;max-width:300px}
+.stage.qr-off .qrc{opacity:0;pointer-events:none}
+.stage.qr-big .qrc{right:150px;top:200px;padding:20px 20px 16px;gap:8px}
+.stage.qr-big .qrc .qr{width:320px;height:320px}
+.stage.qr-big .qrc span{font-size:28px}
+.stage.qr-big .qrc em{display:block}
+.plaque{right:198px;top:40px;min-width:250px;padding:12px 24px 10px}
+.plaque b{font-size:36px}
+.plaque small{font-size:20px}
+.hx{max-width:1240px}
+.kick10{max-width:1240px}
+.stage.qr-big .flag-merci .plaque{display:none}
+.beat > p.small{max-width:1240px}
+.srcs{margin-right:150px}
+/* ---------- ask Claude ---------- */
+.nav .ask-b{background:var(--or-soft);color:var(--ink)}
+.chat{position:fixed;top:16px;right:16px;bottom:88px;width:min(600px,calc(100% - 32px));z-index:22;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden;transform-origin:100% 100%;transition:opacity .35s var(--ease),transform .45s var(--ease)}
+.chat[hidden]{display:flex!important;opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;visibility:hidden}
+.chat header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.chat header b{font:800 30px/1 var(--f-head);font-variation-settings:'opsz' 18}
+.chat header small{display:block;font:400 15px/1.3 var(--f-body);color:var(--muted);margin-top:4px}
+.chat .hb{display:flex;gap:8px;align-items:center}
+.chat .vsel{max-width:170px;background:var(--surface);color:var(--ink);font:400 15px/1.2 var(--f-body);padding:9px 8px}
+.chat .x[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.chat .x{font:700 16px/1 var(--f-body);border:1px solid var(--line);border-radius:9px;padding:10px 14px}
+.chat .log{flex:1;overflow:auto;padding:18px 20px;display:flex;flex-direction:column;gap:14px;font-size:21px;line-height:1.45}
+.chat .m{max-width:92%;padding:12px 16px;border-radius:12px;white-space:pre-wrap;overflow-wrap:anywhere}
+.chat .m.u{align-self:flex-end;background:var(--ground-bleu);color:var(--on-ground)}
+.chat .m.a{align-self:flex-start;background:var(--paper)}
+.chat .m.a.think{color:var(--muted);font-style:italic}
+.chat .m.err{background:none;color:var(--warn);padding:0 4px;font-size:17px}
+.chat .sugg{display:flex;flex-wrap:wrap;gap:8px}
+.chat .sugg button{font:400 17px/1.25 var(--f-body);border:1px solid var(--line);border-radius:20px;padding:8px 14px;text-align:left}
+.chat .sugg button:hover{background:var(--bleu-soft)}
+.chat form{display:flex;gap:10px;padding:14px 16px;border-top:1px solid var(--line)}
+.chat textarea{flex:1;resize:none;font:400 20px/1.35 var(--f-body);color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:52px}
+.chat .send{font:700 18px/1 var(--f-body);background:var(--ink);color:var(--paper);border-radius:10px;padding:0 18px}
+.chat .send:disabled{opacity:.5;cursor:not-allowed}
+/* sturdier Didone strokes for projection: set after every font shorthand, which resets this property */
+.hx,.hx-xl,.poster .num,.poster .line,.mc h3,.rcol h3,.verdict,.mh b,.card h3,.merci,.close li::before,.sheet h3,.stamp,.acol h3{font-variation-settings:'opsz' 18}
+.init .beat,.init .slide{transition:none!important}
+@media (prefers-reduced-motion:reduce){
+  .js .beat,.js .beat.on,.chip,.nav,.nav button,.chat{transition:none}
+  .js .beat.on .seq,.js .beat.on .egal,.js .beat.on .ring .flowline,.js .beat.on .gate,.js .beat.on .w>span,.js .beat.on .ph img,.js .beat.on .mimg img,.guil-cover,.js .beat.on .guil-cover,.js .beat.on .guil-mini,.js .beat.on .bar .fill,.dot.pop,.js .lane-stamp.shown,.js .beat.on .vstamp{animation:none}
+  .js .lane-stamp.shown{opacity:1}
+}
+</style>
+
+<div class="vp" id="vp">
+<div class="stage" id="stage">
+<svg class="wmark guil" id="wmark" aria-hidden="true" viewBox="-100 -100 200 200"></svg>
+
+<!-- ================= Slide 1: le cadrage ================= -->
+<section class="slide on" data-name="Le cadrage" aria-label="Slide 1 of 3: the brief">
+ <div class="beat g-bleu flag flag-cover on" data-notes="0">
+  <div class="plaque"><small>Diapositive 1 sur 3</small><b>Le cadrage</b></div>
+  <div class="s1a">
+   <div class="left">
+    <p class="kicker seq" style="--i:0">Le Dossier IA <span>AI risk and governance, MKTG 644 Session 9</span></p>
+    <h1 class="hx-xl">Une pub écrite par une IA, diffusée par un algorithme.</h1>
+    <div class="qbox seq" style="--i:3"><b>The exercise question</b><p>A government uses generative AI to make a financial-literacy ad for lower-income citizens, and an algorithm targets it by balancing reach and cost. What are the risks, and who do they hurt, how badly?</p></div>
+    <div class="byrow seq" style="--i:4"><p class="byline"><span>Présenté par</span> Alan Asman <em>Prof Ernst Osinga’s class</em></p></div>
+   </div>
+   <div class="poster-wrap seq" style="--i:2">
+    <svg class="guil guil-cover" aria-hidden="true" viewBox="-100 -100 200 200"></svg>
+    <div class="poster" role="img" aria-label="Example poster ad in French: 365 euros. 1 euro a day is 365 euros a year. Take stock of your budget in five minutes. Start. Text and image generated by AI.">
+     <span class="num">365 €</span>
+     <span class="line">1 € par jour, c’est 365 € en un an.</span>
+     <span class="sub">Faites le point sur votre budget en cinq minutes.</span>
+     <span class="cta">Commencer</span>
+     <span class="ai">Texte et image générés par IA</span>
+    </div>
+    <p class="poster-cap">Example ad made for this deck. Not a real campaign.</p>
+   </div>
+  </div>
+ </div>
+
+ <div class="beat" data-notes="1">
+  <div class="plaque"><small>Diapositive 1 sur 3</small><b>Le cadrage</b></div>
+  <h2 class="hx seq" style="--i:0">Two machines, and nobody checks the ad in between.</h2>
+  <div class="pipe">
+   <div class="mc seq" style="--i:1"><div class="mimg mposter" aria-hidden="true"><svg class="guil guil-mini" viewBox="-100 -100 200 200"></svg><div class="poster pthumb"><span class="num">365 €</span><span class="line">1 € par jour, c’est 365 € en un an.</span><span class="sub">Faites le point sur votre budget en cinq minutes.</span><span class="cta">Commencer</span><span class="ai">Texte et image générés par IA</span></div></div><small>Machine 1</small><h3>The writer</h3><p>AI writes the words and makes the picture.</p></div>
+   <div class="gap seq" style="--i:2"><div class="dash"></div><b>No human check</b><span>Personne ne vérifie</span></div>
+   <div class="mc seq" style="--i:3"><div class="mimg"><img src="img/metro.jpg" alt="Passengers in a Paris métro carriage looking at their phones" width="1100" height="733"></div><small>Machine 2</small><h3>The buyer</h3><p>Picks who sees the ad: the most reach for the least money.</p></div>
+   <div class="arrow seq" style="--i:4" aria-hidden="true">→</div>
+   <div class="mc cit seq" style="--i:5"><div class="mimg"><img src="img/caf.jpg" alt="People queueing outside the CAF family-benefit office in Paris 18e" width="1100" height="761"></div><small>The person</small><h3>A citizen on a low income</h3><p>Sees the ad, or never does.</p></div>
+  </div>
+  <div class="facts seq" style="--i:6">
+   <p class="fh">Why the campaign is worth running</p>
+   <div><b class="mono" data-count="9.8" data-dec="1" data-suf=" M">9.8 M</b><span>people in mainland France lived below the poverty line in 2023.<a class="ref" href="#src-1" data-src="1">1</a></span></div>
+   <div><b class="mono" data-count="56" data-suf=" %">56 %</b><span>of French adults have basic financial knowledge.<a class="ref" href="#src-2" data-src="2">2</a></span></div>
+   <div><b class="mono" data-count="76">76</b><span>randomised experiments show financial education works.<a class="ref" href="#src-3" data-src="3">3</a></span></div>
+  </div>
+ </div>
+
+ <div class="beat" data-notes="2">
+  <div class="plaque"><small>Diapositive 1 sur 3</small><b>Le cadrage</b></div>
+  <h2 class="hx seq" style="--i:0">Each risk starts in one of the two machines.</h2>
+  <p class="small seq" style="--i:0;margin-top:-18px"><b style="color:var(--ink)">Session 9’s task:</b> find the risks, then map who gets hurt and how badly.</p>
+  <div class="rcols">
+   <div class="rcol seq" style="--i:1">
+    <h3>From the writer</h3>
+    <button class="rrow" data-r="R1"><span class="rid">R1</span><span><b>Stereotyped picture of poor people</b><span class="tags"><span class="tg k">Bias</span><span class="tg">Inherited</span><span class="tg">Accidental</span></span></span></button>
+    <button class="rrow" data-r="R5"><span class="rid">R5</span><span><b>Copies someone’s protected work</b><span class="tags"><span class="tg k">IP</span><span class="tg">Inherited + added</span><span class="tg">Accidental</span></span></span></button>
+    <button class="rrow" data-r="R6"><span class="rid">R6</span><span><b>Pressure or fear wording</b><span class="tags"><span class="tg k">Content</span><span class="tg">Added</span><span class="tg">Accidental</span></span></span></button>
+    <button class="rrow" data-r="R7"><span class="rid">R7</span><span><b>No label saying AI made it</b><span class="tags"><span class="tg k">Content</span><span class="tg">Added</span><span class="tg">Deliberate</span></span></span></button>
+    <button class="rrow" data-r="R8"><span class="rid">R8</span><span><b>A wrong figure, or a scam look</b><span class="tags"><span class="tg k">Content</span><span class="tg">Added</span><span class="tg">Accidental</span></span></span></button>
+   </div>
+   <div class="rcol seq" style="--i:2">
+    <h3>From the buyer</h3>
+    <button class="rrow" data-r="R2"><span class="rid">R2</span><span><b>Skips people who cost more to reach</b><span class="tags"><span class="tg k">Bias</span><span class="tg">Added</span><span class="tg">Deliberate</span></span></span></button>
+    <button class="rrow" data-r="R3"><span class="rid">R3</span><span><b>Cannot reach people who are offline</b><span class="tags"><span class="tg k">Bias</span><span class="tg">Added</span><span class="tg">Accidental</span></span></span></button>
+    <button class="rrow" data-r="R4"><span class="rid">R4</span><span><b>Guesses income from personal data</b><span class="tags"><span class="tg k">Privacy</span><span class="tg">Inherited + added</span><span class="tg">Deliberate</span></span></span></button>
+    <p class="small" style="margin-top:28px"><b style="color:var(--ink)">The tags come from Session 9.</b> Inherited comes with the vendor’s model, added comes from our own choices. Deliberate means someone chose it, accidental means nobody meant it.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ================= Slide 2: le mécanisme ================= -->
+<section class="slide" data-name="Le mécanisme" aria-label="Slide 2 of 3: how the buyer goes wrong">
+ <div class="beat tight tiles-bg" data-notes="3" data-hook="lanes">
+  <div class="plaque"><small>Diapositive 2 sur 3</small><b>Le mécanisme</b></div>
+  <h2 class="hx seq" style="--i:0">Every view has a price. The buyer buys the cheapest first.</h2>
+  <div class="tally seq" style="--i:1">
+   <div><small>Budget left</small><output id="tBud" class="mono">€240,000</output></div>
+   <div><small>People reached</small><output id="tPpl" class="mono">0</output></div>
+  </div>
+  <div class="lanes seq" style="--i:2" id="lanes"></div>
+  <p class="small seq lanenote" style="--i:3">Each circle is 100,000 people in the target group. Behind them, the white tiles of a Paris métro station, where people see ads on their phones. Prices are mock figures; the real pattern is in sources 4 and 5.</p>
+ </div>
+
+ <div class="beat" data-notes="4" data-hook="map">
+  <div class="plaque"><small>Diapositive 2 sur 3</small><b>Le mécanisme</b></div>
+  <h2 class="hx seq" style="--i:0">The weekly report says the campaign worked.</h2>
+  <div class="s2b">
+   <div class="mapwrap seq" style="--i:1">
+    <svg id="map" viewBox="0 0 108 103" role="img" aria-label="Map of mainland France with 300 dots, one per 10,000 people in the target group. Filled dots saw the ad: all daily users, most occasional users, and none of the people who are rarely online."></svg>
+    <div class="mlegend"><span><i style="background:var(--gA)"></i>Online every day</span><span><i style="background:var(--gB)"></i>Some days</span><span><i style="background:var(--gC)"></i>Rarely online</span></div>
+   </div>
+   <div class="kcol">
+    <span class="mock seq" style="--i:1">Mock data from the model, budget €240,000</span>
+    <div class="krow seq" style="--i:2"><span class="kl">People reached<small>of 3.0 M, target 2.1 M</small></span><span class="kv mono" data-count="2.25" data-dec="2" data-suf=" M">2.25 M</span><span class="ok">✓ On track</span></div>
+    <div class="krow seq" style="--i:3"><span class="kl">Reach of target group<small>target 70 %</small></span><span class="kv mono" data-count="75" data-suf=" %">75 %</span><span class="ok">✓ On track</span></div>
+    <div class="krow seq" style="--i:4"><span class="kl">Cost per person<small>target €0.15 or less</small></span><span class="kv mono" data-count="0.11" data-dec="2" data-pre="€">€0.11</span><span class="ok">✓ On track</span></div>
+    <p class="lead seq" style="--i:6">Every number is green. Now split it by who was reached.</p>
+   </div>
+  </div>
+ </div>
+
+ <div class="beat g-rouge" data-notes="5">
+  <div class="plaque"><small>Diapositive 2 sur 3</small><b>Le mécanisme</b></div>
+  <h2 class="hx seq" style="--i:0">By group, the people this campaign is for got 0 %.</h2>
+  <div class="s2c">
+   <div class="s2cl">
+    <div class="bars seq" style="--i:1">
+     <div class="bar" style="--i:0"><span><b>Online every day</b><span class="st">✓ On track</span></span><span class="track"><span class="fill" style="--w:1;display:block"></span></span><span class="pct">100 %</span></div>
+     <div class="bar" style="--i:1"><span><b>Online some days</b><span class="st">✓ On track</span></span><span class="track"><span class="fill" style="--w:.83;display:block"></span></span><span class="pct">83 %</span></div>
+     <div class="bar zero" style="--i:2"><span><b>Rarely online</b><span class="st">✕ Off track</span></span><span class="track"></span><span class="pct">0 %</span></div>
+     <span class="target"><span>Target 60 % per group</span></span>
+    </div>
+    <div class="evid">
+     <div class="ev seq" style="--i:4"><b>It happened before, 2019</b><p>A neutral ad for science careers reached fewer women, because younger women cost more to reach.<a class="ref" href="#src-4" data-src="4">4</a></p></div>
+     <div class="ev seq" style="--i:5"><b>And again, 2019</b><p>Facebook’s delivery skewed real job and housing ads by gender and race.<a class="ref" href="#src-5" data-src="5">5</a></p></div>
+    </div>
+    <p class="body seq" style="--i:6"><b>Session 9 calls this optimising the wrong metric.</b> The algorithm did its job. The job was wrong.</p>
+   </div>
+   <figure class="ph big seq" style="--i:3"><div class="fr"><span class="egal" aria-hidden="true">Égalité&nbsp;?</span><img src="img/mafate.jpg" alt="A small France Services building among green hills in Mafate, La Réunion" width="1100" height="825"></div><figcaption>The costliest people to reach: Mafate, in La Réunion, has no roads at all.<a class="ref" href="#src-17" data-src="17">17</a><span class="cr">Photo: Rémih, CC BY-SA 4.0</span></figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<!-- ================= Slide 3: la matrice ================= -->
+<section class="slide" data-name="La matrice" aria-label="Slide 3 of 3: risk matrix and governance">
+ <div class="beat" data-notes="6">
+  <div class="plaque"><small>Diapositive 3 sur 3</small><b>La matrice</b></div>
+  <h2 class="hx seq" style="--i:0">Every high-severity risk lands on citizens or the ministry.</h2>
+  <div class="matrix seq" style="--i:1" id="matrix"></div>
+ </div>
+
+ <div class="beat" data-notes="7">
+  <div class="plaque"><small>Diapositive 3 sur 3</small><b>La matrice</b></div>
+  <h2 class="hx seq" style="--i:0">Session 9’s rule: the fix depends on whether anyone meant it.</h2>
+  <div class="gov">
+   <div class="card b seq" style="--i:1">
+    <h3>Deliberate</h3><span class="ids">R2, R4, R7</span>
+    <p class="rule">A policy and a named owner.</p>
+    <ul><li>A minimum reach for every income band</li><li>Target by context, not by income profiles</li><li>A named person signs off the AI label</li></ul>
+   </div>
+   <div class="card seq" style="--i:2">
+    <h3>Accidental</h3><span class="ids">R1, R3, R5, R6, R8</span>
+    <p class="rule">Checking and monitoring.</p>
+    <ul><li>A human check before launch</li><li>A weekly delivery report by group</li><li>Offline help at CAF offices and 2,865 France Services counters<a class="ref" href="#src-14" data-src="14">14</a></li></ul>
+   </div>
+   <div class="photos seq" style="--i:3">
+    <figure class="ph"><div class="fr"><img src="img/caf.jpg" alt="A long queue outside the family-benefit office in Paris 18e" width="1100" height="761"></div><figcaption>A CAF office in Paris 18e. The CAF handles RSA and housing aid.<a class="ref" href="#src-18" data-src="18">18</a><span class="cr">Photo: Cheep, CC BY-SA 4.0</span></figcaption></figure>
+    <figure class="ph"><div class="fr"><img src="img/embrun.jpg" alt="A France Services public service counter on a town square in Embrun" width="1100" height="818"></div><figcaption>A France Services counter in Embrun.<span class="cr">Photo: Benoît Prieur, CC0</span></figcaption></figure>
+   </div>
+  </div>
+ </div>
+
+ <div class="beat g-bleu flag flag-close" data-notes="8">
+  <div class="plaque"><small>Diapositive 3 sur 3</small><b>La matrice</b></div>
+  <div class="s3c">
+   <div class="close">
+    <h2 class="hx-xl seq" style="--i:0">Ce qu’Alan recommande</h2>
+    <p class="lead seq" style="--i:1">What Alan recommends before the campaign launches:</p>
+    <ol>
+     <li class="seq" style="--i:2">Put a person between the two machines to check every figure, picture and word.</li>
+     <li class="seq" style="--i:3">Judge the buyer by who it reaches: a weekly report by income group, with a floor for each group.</li>
+    </ol>
+    <p class="merci seq" style="--i:6">Et maintenant&nbsp;: les agents.<span>Next: how agents could run this campaign.</span></p>
+   </div>
+   <div class="poster-wrap pw-close seq" style="--i:4">
+    <svg class="guil guil-cover" aria-hidden="true" viewBox="-100 -100 200 200"></svg>
+    <div class="poster pmini" role="img" aria-label="The example ad again, now stamped as checked by a human">
+     <span class="num">365 €</span>
+     <span class="line">1 € par jour, c’est 365 € en un an.</span>
+     <span class="sub">Faites le point sur votre budget en cinq minutes.</span>
+     <span class="cta">mesquestionsdargent.fr</span>
+     <span class="ai">Texte et image générés par IA, relus par une personne</span>
+     <span class="vstamp">Vérifié par<br>un humain</span>
+    </div>
+    <p class="poster-cap">The same ad after a person checks it, labelled as AI-made and linked to the Banque de France portal.<a class="ref" href="#src-15" data-src="15">15</a></p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ================= Session 10: l'atelier agentique ================= -->
+<section class="slide" data-name="L’atelier agentique" data-q="How would agents redesign this campaign workflow, and what is left for people?" aria-label="Session 10 exercise: redesign the campaign workflow with agents">
+ <div class="beat" data-notes="12">
+  <div class="plaque"><small>Diapositive 4, séance 10</small><b>L’atelier agentique</b></div>
+  <p class="kick10 seq" style="--i:0">Next week’s Session 10 exercise, applied to this campaign: redesign the workflow with agents.<a class="ref" href="#src-27" data-src="27">27</a></p>
+  <h2 class="hx">Today the campaign moves one team at a time.</h2>
+  <div class="flow6"><div class="fs seq" style="--i:1"><span class="fn mono">1</span><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 4h18l8 8v32H12z M30 4v8h8 M18 22h14 M18 30h14 M18 38h9"/></svg><b>Brief</b><span>Marketing manager writes the brief</span></div><div class="fs seq" style="--i:2"><span class="fn mono">2</span><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40l4-12L32 8l8 8-20 20z M28 12l8 8 M8 40l12-4"/></svg><b>Creative</b><span>Creative team drafts concepts</span></div><div class="fs seq" style="--i:3"><span class="fn mono">3</span><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6v34 M10 40h28 M8 14h32 M14 14l-6 14h12z M34 14l-6 14h12z"/></svg><b>Legal review</b><span>Legal reviews; revisions start</span></div><div class="fs seq" style="--i:4"><span class="fn mono">4</span><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="10"/><circle cx="24" cy="24" r="3"/></svg><b>Media</b><span>Media team targets and buys</span></div><div class="fs seq" style="--i:5"><span class="fn mono">5</span><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4c8 6 10 16 6 26H18C14 20 16 10 24 4z M18 30l-6 8 8-2 M30 30l6 8-8-2 M24 36v8"/></svg><b>Launch</b><span>The campaign goes live</span></div><div class="fs seq" style="--i:6"><span class="fn mono">6</span><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 42h36 M12 42V28 M22 42V18 M32 42V24 M42 42V10"/></svg><b>Analytics</b><span>Analytics team judges it, after the end</span></div></div>
+  <div class="pain">
+   <p class="seq" style="--i:7"><b>The revision loop.</b> Legal finds a problem and the ad goes back to creative, then waits again.</p>
+   <p class="seq" style="--i:8"><b>Too late to fix.</b> Analytics judges the campaign after it ends, when the €240,000 is already spent. The 0 % on slide 2 would only show up here.</p>
+  </div>
+ </div>
+
+ <div class="beat" data-notes="13">
+  <div class="plaque"><small>Diapositive 4, séance 10</small><b>L’atelier agentique</b></div>
+  <h2 class="hx">Reinvented: agents run one loop, people hold the gate.</h2>
+  <div class="reinv">
+   <div class="goal seq" style="--i:1"><span class="who10">Person: marketing manager</span><b>Sets the goal and the floors</b><p>Reach every income group, at least 60 % each, inside €240,000.</p></div>
+   <div class="loop seq" style="--i:2">
+    <svg class="ring" viewBox="0 0 700 600" aria-hidden="true"><ellipse cx="350" cy="300" rx="250" ry="205"/><ellipse class="flowline" cx="350" cy="300" rx="250" ry="205"/></svg>
+    <div class="ag a1"><span class="arch">Generate</span><b>Create agent</b><p>Drafts the ad in variants, by region and language</p></div>
+    <div class="ag a2"><span class="arch">Extract</span><b>Check agent</b><p>Checks figures, AI label and tone before any spend</p></div>
+    <div class="gate"><b>Gate</b><span>A person signs off</span></div>
+    <div class="ag a3"><span class="arch">Analyse</span><b>Buy agent</b><p>Buys reach with a floor for every group</p></div>
+    <div class="ag a4"><span class="arch">Analyse</span><b>Measure agent</b><p>Reports reach by group every day and feeds it back</p></div>
+   </div>
+   <div class="opps seq" style="--i:3">
+    <h3>New opportunities</h3>
+    <ul><li>Legal checks move inside the loop, not after it</li><li>Results arrive daily, while money can still move</li><li>Variants for each region, language and channel</li><li>The same agents prepare kits for CAF and France Services counters</li></ul>
+   </div>
+  </div>
+  <p class="small seq" style="--i:4">Agent types (generate, analyse, extract) and “reinvent, don’t just agentize” are from Session 10.<a class="ref" href="#src-27" data-src="27">27</a></p>
+ </div>
+
+ <div class="beat" data-notes="14">
+  <div class="plaque"><small>Diapositive 4, séance 10</small><b>L’atelier agentique</b></div>
+  <h2 class="hx">The human role: guard the loop, not each step.</h2>
+  <div class="roles">
+   <div class="role seq" style="--i:1"><span class="rk">Approval gate</span><b>Legal lead signs off each new ad before money is spent</b><p>No ad reaches citizens unchecked: the fix from slide 3, built in.</p></div>
+   <div class="role seq" style="--i:2"><span class="rk">Exception handling</span><b>The Measure agent escalates when a group falls below its floor</b><p>A person decides: shift budget, change the ad, or go offline.</p></div>
+   <div class="role seq" style="--i:3"><span class="rk">Audit and override</span><b>A named owner reviews the agents’ choices each week</b><p>They can reverse a decision or retrain an agent.</p></div>
+   <div class="role keep seq" style="--i:4"><span class="rk">What only people do</span><b>Strategy, taste, and the relationships with CAF and the Banque de France</b><p>Session 10: people focus on strategy and stakeholders.</p></div>
+  </div>
+  <div class="chain seq" style="--i:5"><b>The new risk: linked agents.</b> If the Create agent prints a wrong figure, every ad the Buy agent places carries it, a chained vulnerability. The gate sits right after Check for that reason.</div>
+  <div class="reco seq" style="--i:6"><b>Alan’s recommendation:</b> build these agents on a French, open-weight stack, so the ministry can inspect the model and keep citizens’ data in France. One French option, in the video.<a class="ref" href="#src-19" data-src="19">19</a><a class="ref" href="#src-22" data-src="22">22</a><a class="ref" href="#src-26" data-src="26">26</a></div>
+ </div>
+</section>
+
+<!-- ================= Épilogue: the Mistral video ================= -->
+<section class="slide epi" data-name="Vidéo et merci" aria-label="Epilogue: a 91-second video on Mistral AI and the step to agentic workflows">
+ <div class="beat epi-b" data-notes="11">
+  <video id="epiV" src="img/mistral.mp4" muted playsinline preload="auto" aria-label="Video: France's Mistral AI, open weights and sovereignty, three things to try, and the step to Session 10's agentic workflows. Captioned, silent."></video>
+  <button class="epi-ctl" id="epiC">Pause</button>
+ </div>
+ <div class="beat g-bleu flag flag-merci" data-notes="15">
+  <div class="plaque"><small>Fin</small><b>Merci</b></div>
+  <div class="merci-end">
+   <svg class="cocarde seq" style="--i:0" viewBox="-100 -100 200 200" aria-hidden="true"><circle r="96" fill="var(--ground-rouge)"/><circle r="64" fill="#FFFFFF"/><circle r="34" fill="var(--ground-bleu)"/></svg>
+   <p class="hx-xl">Merci, et vive la France&nbsp;!</p>
+   <p class="lead seq" style="--i:3">Alan’s recommendation in one line: keep a person between the machines, judge the buyer by who it reaches, and build the agents on a stack France can own.</p>
+   <p class="merci-q seq" style="--i:5">Questions&nbsp;? <span>Ask Alan, or ask Claude live (press Q).</span></p>
+  </div>
+
+ </div>
+</section>
+
+<!-- ================= Annex A ================= -->
+<section class="slide" data-name="Report" aria-label="Annex A: mock campaign performance report">
+ <div class="beat tight" data-notes="9" data-hook="chart">
+  <div class="plaque"><small>Annexe A</small><b>Le rapport</b></div>
+  <h2 class="hx">The averages hid the failure.</h2>
+  <p class="small" style="margin-top:-14px">Mock report: every figure comes from the slide 2 model, checked by recalculation. Not real data.</p>
+  <div class="tiles">
+   <div class="tile"><small>Reach of target group</small><b class="mono">75 %</b><span class="good">✓ On track, target 70 %</span></div>
+   <div class="tile"><small>Cost per person reached</small><b class="mono">€0.11</b><span class="good">✓ On track, target €0.15</span></div>
+   <div class="tile"><small>Spend</small><b class="mono">€240,000</b><span class="small">100 % of budget</span></div>
+   <div class="tile alert"><small>Rarely online reached</small><b class="mono">0 %</b><span class="bad">✕ Off track, target 60 %</span></div>
+  </div>
+  <div class="dgrid">
+   <figure class="chartbox"><figcaption>Reach by group as the budget grows <span class="clg"><span><i style="background:var(--gA)"></i>Every day</span><span><i style="background:var(--gB)"></i>Some days</span><span><i style="background:var(--gC)"></i>Rarely online</span></span></figcaption><svg id="chart" viewBox="0 0 1000 400" role="img" aria-label="Line chart of reach by group against budget. Daily users reach 100 % at 120,000 euros, occasional users at 264,000 euros, and people who are rarely online only start being reached above 264,000 euros, reaching 100 % at 456,000 euros."></svg></figure>
+   <div class="acol">
+    <h3>What to do next, by impact and effort</h3>
+    <div class="prio">
+     <span class="hd"></span><span class="hd">Low effort</span><span class="hd">High effort</span>
+     <span class="hd">High impact</span>
+     <div class="do"><b>Do first</b>Report reach by group every week, with a 60 % floor per group.</div>
+     <div><b>Plan next</b>Run the same ad through CAF offices, France Services and local radio.</div>
+     <span class="hd">Lower impact</span>
+     <div><b>If time allows</b>Cap how far the buyer may shift spend in a day.</div>
+     <div><b>Later</b>Test delivery by income band with a holdout group.</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ================= Annex B ================= -->
+<section class="slide" data-name="Sources" aria-label="Annex B: sources and photo credits">
+ <div class="beat" data-notes="10">
+  <div class="plaque"><small>Annexe B</small><b>Les sources</b></div>
+  <h2 class="hx">Sources</h2>
+  <ol class="srcs" id="srcs"></ol>
+  <p class="small">Photos from Wikimedia Commons: Paris métro by besopha (CC BY 2.0), Mafate France Services by Rémih (CC BY-SA 4.0), CAF Paris 18e by Cheep (CC BY-SA 4.0), France Services Embrun by Benoît Prieur (CC0). Class exercise for MKTG 644, not a French government publication.</p>
+ </div>
+ <div class="beat" data-notes="10">
+  <div class="plaque"><small>Annexe B</small><b>Les sources</b></div>
+  <h2 class="hx">Sources for slide 4 and the video</h2>
+  <ol class="srcs" id="srcs2"></ol>
+  <p class="small">Checked on 6 Nov 2026 on each publisher’s own page. Benchmark claims are Mistral’s own and are not shown. The Mistral colours are used without its logo; this class exercise is not affiliated with Mistral AI.</p>
+</div>
+</section>
+
+<div class="scrim" id="scrim" hidden></div>
+<article class="sheet" id="sheet" hidden aria-live="polite"></article>
+<a class="qrc" id="qrc" href="@SHARE_URL@" target="_blank" rel="noopener"><!--@QR@--><span>Scan to follow</span><em>The deck, the sources and Ask Claude, on your phone</em></a>
+<footer class="band" id="band">
+ <div class="tl" id="tl" aria-hidden="true"></div>
+ <p class="bq"><b id="bqL">La question</b> <span id="bqT">What can go wrong when AI writes a government ad and an algorithm targets it, and who is hurt most?</span></p>
+ <p class="bn"><svg class="seal" aria-hidden="true" viewBox="-100 -100 200 200"></svg><span><b>Alan Asman</b><small id="bnS">MKTG 644, Session 9</small></span></p>
+</footer>
+</div>
+</div>
+
+<aside class="notes" id="notes" hidden></aside>
+
+<aside class="chat" id="chat" hidden aria-label="Ask Claude about this deck">
+ <header><span><b>Demandez à Claude</b><small>Answers come from this deck’s risks, figures and sources. Ask in English or French; answers come in English. Voice reads them aloud. Esc closes.</small></span><span class="hb"><select class="x vsel" id="voiceS" aria-label="Voice" hidden></select><button class="x" id="voiceB" aria-pressed="false" hidden>Voice: off</button><button class="x" id="chatX">Close</button></span></header>
+ <div class="log" id="chatLog" aria-live="polite">
+  <div class="sugg" id="chatSugg">
+   <button>Why is R2 rated high severity for citizens?</button>
+   <button>What is the difference between deliberate and accidental risks?</button>
+   <button>How much budget would reach everyone?</button>
+   <button>Is the reach problem proven for income?</button>
+   <button>How does slide 4 answer the Session 10 exercise?</button>
+   <button>What does Session 10 say about agentizing vs reinventing?</button>
+  </div>
+ </div>
+ <form id="chatF"><textarea id="chatQ" rows="2" placeholder="Type or dictate a question, in English or French…" aria-label="Your question"></textarea><button class="send" id="chatSend" type="submit">Ask</button></form>
+</aside>
+
+<nav class="nav" id="nav" aria-label="Slides">
+ <button id="prev">Back</button>
+ <span class="sep" aria-hidden="true"></span>
+ <button data-go="0">1</button><button data-go="1">2</button><button data-go="2">3</button>
+ <span class="sep" aria-hidden="true"></span>
+ <button data-go="3">4</button>
+ <span class="sep" aria-hidden="true"></span>
+ <button data-go="4">Fin</button>
+ <span class="sep" aria-hidden="true"></span>
+ <button data-go="5">A</button><button data-go="6">B</button>
+ <span class="pos" id="pos"></span>
+ <button class="notes-b" id="notesB" aria-pressed="false">Notes</button>
+ <button class="ask-b" id="askB" hidden>Ask Claude</button>
+ <button class="big" id="next">Next</button>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+(function(){
+document.documentElement.classList.add('js');
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- sources ---------- */
+var SRC={
+ 1:['Insee, Insee Première no. 2063 (2025): poverty in 2023','https://www.insee.fr/fr/statistiques/fichier/8600989/ip2063.pdf'],
+ 2:['Banque de France, press release on French financial literacy, 14 Dec 2023','https://www.banque-france.fr/fr/communiques-de-presse/la-culture-financiere-des-francais-sameliore-progressivement-dapres-de-nouvelles-etudes-menees-par'],
+ 3:['Kaiser, Lusardi, Menkhoff and Urban (2022), Journal of Financial Economics 145','https://www.nber.org/papers/w27057.pdf'],
+ 4:['Lambrecht and Tucker (2019), Management Science 65(7): STEM job ads','https://lbsresearch.london.edu/id/eprint/967/'],
+ 5:['Ali et al. (2019), Discrimination through optimization, Proc. ACM HCI','https://arxiv.org/abs/1904.02095'],
+ 6:['Nicoletti and Bass (2023), Bloomberg: generative AI and bias','https://www.bloomberg.com/graphics/2023-generative-ai-bias'],
+ 7:['EU AI Act, Regulation (EU) 2024/1689, Article 5: prohibited practices (EUR-Lex)','https://eur-lex.europa.eu/eli/reg/2024/1689/oj'],
+ 8:['EU AI Act, Regulation (EU) 2024/1689, Article 50 (transparency) and Article 113 (applies from 2 Aug 2026) (EUR-Lex)','https://eur-lex.europa.eu/eli/reg/2024/1689/oj'],
+ 9:['Digital Services Act, Article 26: advertising','https://eur-lex.europa.eu/eli/reg/2022/2065/oj'],
+ 10:['GDPR, Article 35: data protection impact assessment','https://eur-lex.europa.eu/eli/reg/2016/679/oj'],
+ 11:['Insee, Insee Première no. 1953 (2023): 15 % of people aged 15 or over in illectronisme in 2021','https://www.insee.fr/fr/statistiques/7633654'],
+ 12:['CMS law-firm case tracker: Getty Images v. Stability AI, UK High Court judgment of 4 Nov 2025','https://cms.law/en/int/publication/artificial-intelligence-and-copyright-case-tracker/united-kingdom-getty-images-us-inc-ors-v-stability-ai-ltd'],
+ 13:['US Copyright Office (2025), Copyright and AI, Part 2: copyrightability','https://copyright.gov/newsnet/2025/1060.html'],
+ 14:['Ministère de la Transition écologique (Nov 2025): network of 2,865 France Services','https://www.ecologie.gouv.fr/presse/salon-maires-collectivites-locales-gouvernement-annonce-61-nouvelles-maisons-france-services'],
+ 15:['Banque de France: national strategy for financial education (EDUCFI) and mesquestionsdargent.fr','https://www.banque-france.fr/fr/la-strategie-nationale-deducation-economique-budgetaire-et-financiere-educfi'],
+ 16:['La finance pour tous (24 Jan 2017): launch of mesquestionsdargent.fr','https://www.lafinancepourtous.com/2017/01/24/mesquestionsdargent-fr-le-portail-d-education-economique-et-financiere/'],
+ 17:['Wikipedia: Mafate, no roads, access on foot or by helicopter (secondary source)','https://en.wikipedia.org/wiki/Cirque_de_Mafate'],
+ 18:['Caf.fr: the CAF handles RSA, the prime d’activité and housing aid','https://www.caf.fr/'],
+ 19:['Mistral AI (29 Oct 2026): weights of Mistral Large 4 (Le Chonk) opened, 1 trillion parameters, trained in Europe','https://mistral.ai/news/mistral-large-4-oss/'],
+ 20:['Hugging Face, Mistral-Large-4-1T-A52B: Mistral Ecosystem Open-Weight Licence (modified MIT)','https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/blob/main/LICENSE'],
+ 21:['Mistral AI (8 Sep 2026): €3 billion Series D, valuation above €21 billion, led by Samsung Electronics','https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/'],
+ 22:['Mistral AI (5 Nov 2026): Studio for agents, workflows and apps, in the cloud, a VPC or on-premises','https://mistral.ai/news/build-with-studio/'],
+ 23:['Mistral AI (2025): Mistral Small 3.1, Apache 2.0, runs on a Mac with 32 GB RAM (Mistral’s claim)','https://mistral.ai/news/mistral-small-3-1/'],
+ 24:['Mistral AI: pricing, free plan on web and mobile','https://mistral.ai/pricing'],
+ 25:['GitHub, mistralai/mistral-vibe: open-source terminal agent, Apache 2.0','https://github.com/mistralai/mistral-vibe'],
+ 26:['Annuaire des Entreprises (French state register): Mistral AI, SAS, Paris 1er, created 28 Apr 2023','https://annuaire-entreprises.data.gouv.fr/entreprise/952418325'],
+ 27:['MKTG 644 Session 10 slides, Agentic Marketing Workflows (Prof Ernst Osinga): agent archetypes, agentizing vs reinventing, human in the loop, linked agents','']
+};
+function srcLi(k){return '<li id="src-'+k+'"><span>'+k+'</span>'+(SRC[k][1]?'<a href="'+SRC[k][1]+'" target="_blank" rel="noopener">'+SRC[k][0]+'</a>':'<b class="nolink">'+SRC[k][0]+'</b>')+'</li>'}
+document.getElementById('srcs').innerHTML=Object.keys(SRC).filter(function(k){return +k<=18}).map(srcLi).join('');
+document.getElementById('srcs2').innerHTML=Object.keys(SRC).filter(function(k){return +k>18}).map(srcLi).join('');
+function refs(s){return s.replace(/\{(\d+)\}/g,function(m,n){return '<a class="ref" href="#src-'+n+'" data-src="'+n+'">'+n+'</a>'})}
+
+/* ---------- risks ---------- */
+var ST=[{id:'cit',name:'Target citizens',sh:'Citizens'},{id:'min',name:'Ministry',sh:'Ministry'},{id:'plat',name:'Platform',sh:'Platform'},{id:'soc',name:'Society',sh:'Society'}];
+var RISKS=[
+ {id:'R1',t:'Stereotyped picture of poor people',s:'Stereotype',tags:['Bias','Inherited','Accidental'],
+  why:'Image generators drew people with darker skin far more often for low-paid jobs than for high-paid ones.{6} A picture of “a lower-income citizen” can repeat that stereotype to the people the campaign wants to respect.',
+  ctl:'Brief the image with real, varied people and places, and let a panel from the target group review it.',sc:{cit:[3,2],min:[2,2]}},
+ {id:'R2',t:'Skips people who cost more to reach',s:'Reach skew',tags:['Bias','Added','Deliberate'],
+  why:'A cost-minimising buyer showed a neutral science-careers ad to fewer women, because younger women cost more to reach.{4} Facebook skewed job and housing ads by gender and race.{5} For income it is a hypothesis to test.',
+  ctl:'Report delivery by income band every week, set a minimum reach per band, and cap how far spend may shift.',sc:{cit:[3,3],min:[3,2],soc:[2,2],plat:[2,1]}},
+ {id:'R3',t:'Cannot reach people who are offline',s:'Offline gap',tags:['Bias','Added','Accidental'],
+  why:'In 2021, 15 % of people aged 15 or over in France were in illectronisme: no internet use, or no basic digital skills.{11} An online-only campaign never reaches them, and the buyer never sees them, so the dashboard looks fine.',
+  ctl:'Run the same message through CAF offices,{18} the 2,865 France Services counters,{14} post offices and local radio.',sc:{cit:[3,3],min:[3,2]}},
+ {id:'R4',t:'Guesses income from personal data',s:'Profiling',tags:['Privacy','Inherited + added','Deliberate'],
+  why:'The platform cannot see income, so its model infers it, and money trouble is a sensitive trait. Large-scale profiling can require a data protection impact assessment,{10} and the DSA bans ads profiled on special categories.{9}',
+  ctl:'Target by context (topics, regions) instead of personal profiles, and run the impact assessment with the data protection officer.',sc:{min:[2,3],cit:[2,2],plat:[2,2],soc:[2,2]}},
+ {id:'R5',t:'Copies someone’s protected work',s:'Copyright',tags:['IP','Inherited + added','Accidental'],
+  why:'In Getty Images v. Stability AI, the UK High Court found narrow trademark infringement where outputs carried Getty’s marks.{12} In the US, purely AI-made material lacks the human authorship copyright needs,{13} so the ministry may not own its own visual.',
+  ctl:'Use a vendor tier with licensed training data and indemnity, run a reverse-image search, and keep the prompts on file.',sc:{min:[2,2],plat:[2,2],soc:[2,1]}},
+ {id:'R6',t:'Pressure or fear wording',s:'Pressure',tags:['Content','Added','Accidental'],
+  why:'A model asked for ads that convert may write urgency or fear. The AI Act bans AI that exploits a person’s economic situation to cause significant harm.{7} A literacy ad rarely reaches that bar, but it is a reason to keep the tone calm.',
+  ctl:'Prompt for plain, neutral wording, ban urgency phrases, and have a person check the copy.',sc:{cit:[1,3],min:[1,3],soc:[1,2]}},
+ {id:'R7',t:'No label saying AI made it',s:'AI label',tags:['Content','Added','Deliberate'],
+  why:'Under the AI Act, AI-generated output must be marked, and synthetic images that could pass as real must be disclosed.{8} Commentary dates these duties from 2 August 2026.',
+  ctl:'Label the visual as AI-generated, keep the provenance data, and record who signed off the text.',sc:{min:[2,2],cit:[2,1],plat:[2,1],soc:[2,1]}},
+ {id:'R8',t:'A wrong figure, or a scam look',s:'Wrong facts',tags:['Content','Added','Accidental'],
+  why:'The ad teaches interest rates and how inflation erodes savings, the topics French adults master least,{2} and 16 % of adults report being fraud victims,{2} so a vague ad can read as a scam.',
+  ctl:'A named expert checks every figure, and the ad links to mesquestionsdargent.fr, the Banque de France portal running since 2017.{15}{16}',sc:{cit:[2,3],min:[2,3],plat:[1,2]}}
+];
+function byId(id){for(var i=0;i<RISKS.length;i++)if(RISKS[i].id===id)return RISKS[i]}
+function band(x){return x<=2?'l':(x<=4?'m':'h')}
+var BL={h:'High',m:'Medium',l:'Low'},FR={h:'Élevé',m:'Moyen',l:'Faible'};
+
+/* matrix: stakeholders as rows, severity low to high */
+(function(){
+ var B=[['l','1 to 2'],['m','3 to 4'],['h','6 to 9']];
+ var h='<div class="mh key">Severity = likelihood × impact, each 1 to 3 (Alan’s judgement)</div>'+B.map(function(b){return '<div class="mh"><b>'+BL[b[0]]+'</b><span>'+FR[b[0]]+', score '+b[1]+'</span></div>'}).join('');
+ ST.forEach(function(s){
+  h+='<div class="who">'+s.name+'</div>';
+  B.forEach(function(b){
+   var items=RISKS.filter(function(r){var v=r.sc[s.id];return v&&band(v[0]*v[1])===b[0]});
+   h+='<div class="cell '+b[0]+'">'+items.map(function(r){return '<button class="chip" data-r="'+r.id+'"><span class="rid">'+r.id+'</span>'+r.s+'</button>'}).join('')+'</div>';
+  });
+ });
+ document.getElementById('matrix').innerHTML=h;
+})();
+
+/* risk sheet, opened by clicking any risk */
+var sheet=document.getElementById('sheet'),scrim=document.getElementById('scrim');
+function openSheet(id){
+ var r=byId(id),worst='l';
+ var rows=ST.filter(function(s){return r.sc[s.id]}).map(function(s){var v=r.sc[s.id],x=v[0]*v[1],b=band(x);if(b==='h'||(b==='m'&&worst==='l'))worst=b;
+  return '<span>'+s.sh+'</span><span class="sc">'+v[0]+' × '+v[1]+' = '+x+'</span><span class="badge '+b+'">'+BL[b]+'</span>'}).join('');
+ sheet.innerHTML='<div class="top"><h3>'+r.id+'. '+r.t+'</h3><span class="stamp" style="'+(worst==='h'?'':'color:var(--muted);border-color:var(--muted)')+'">'+FR[worst]+'</span></div>'+
+  '<div class="tags">'+r.tags.map(function(t,i){return '<span class="tg'+(i?'':' k')+'">'+t+'</span>'}).join('')+'</div>'+
+  '<h4>Severity by stakeholder</h4><div class="sev">'+rows+'</div>'+
+  '<h4>Why it matters</h4><p>'+refs(r.why)+'</p>'+
+  '<h4>Control: '+(r.tags[2]==='Deliberate'?'a policy and a named owner':'checking and monitoring')+'</h4><p>'+refs(r.ctl)+'</p>'+
+  '<button class="xbtn" id="xbtn">Close</button>';
+ sheet.hidden=false;scrim.hidden=false;document.getElementById('xbtn').focus();
+}
+function closeSheet(){sheet.hidden=true;scrim.hidden=true}
+scrim.addEventListener('click',closeSheet);
+sheet.addEventListener('click',function(e){if(e.target.id==='xbtn')closeSheet()});
+
+/* ---------- one model drives the buyer lanes, the delivery map and the report chart ---------- */
+var NA=150,NB=90,NC=60,UNIT=800;
+function model(b){var u=Math.floor(b/UNIT),a=Math.min(NA,u);u-=a;var bb=Math.min(NB,Math.floor(u/2));u-=bb*2;var c=Math.min(NC,Math.floor(u/4));return{a:a,b:bb,c:c}}
+var GCOL={A:'var(--gA)',B:'var(--gB)',C:'var(--gC)'};
+function mfmt(x){return x?String(Math.round(x/1e4)/100):'0'}
+
+/* the buyer at work: each circle is 100,000 people */
+var LANES=[{k:'A',name:'Online every day',sub:'Phone in hand all day',price:'€0.08',n:15},{k:'B',name:'Online some days',sub:'Checks now and then',price:'€0.16',n:9},{k:'C',name:'Rarely online',sub:'Shared phone, weak signal',price:'€0.32',n:6}];
+var lanesEl=document.getElementById('lanes');
+lanesEl.innerHTML=LANES.map(function(l){var d='';for(var i=0;i<l.n;i++)d+='<span class="dot" data-k="'+l.k+'"></span>';
+ return '<div class="lane" style="--g:'+GCOL[l.k]+'"><div class="lhead"><div class="etq"><b>'+l.price+'</b><span>per person</span></div><div class="ln"><b>'+l.name+'</b><span>'+l.sub+'</span></div></div><div class="dots">'+d+'</div><div class="cnt" id="cnt'+l.k+'"></div>'+(l.k==='C'?'<span class="lane-stamp" id="lstamp">Jamais atteints</span>':'')+'</div>'}).join('');
+var laneDots={A:[],B:[],C:[]};[].slice.call(lanesEl.querySelectorAll('.dot')).forEach(function(d){laneDots[d.dataset.k].push(d)});
+var STEPS=[],i;for(i=0;i<15;i++)STEPS.push(['A',i,1,8000]);for(i=0;i<7;i++)STEPS.push(['B',i,1,16000]);STEPS.push(['B',7,.5,8000]);
+function setLanes(n){
+ var bud=240000,ppl=0,cnt={A:0,B:0,C:0};
+ ['A','B','C'].forEach(function(k){laneDots[k].forEach(function(d){d.classList.remove('on','half')})});
+ for(var j=0;j<n;j++){var st=STEPS[j];laneDots[st[0]][st[1]].classList.add(st[2]===1?'on':'half');bud-=st[3];ppl+=st[2]*1e5;cnt[st[0]]+=st[2]*1e5}
+ document.getElementById('tBud').textContent='€'+bud.toLocaleString('en-GB');
+ document.getElementById('tPpl').textContent=ppl?mfmt(ppl)+' M':'0';
+ LANES.forEach(function(l){document.getElementById('cnt'+l.k).textContent=mfmt(cnt[l.k])+' of '+(l.n/10).toFixed(1)+' M'});
+ document.getElementById('lstamp').classList.toggle('shown',n>=STEPS.length);
+}
+setLanes(STEPS.length);
+var laneTimer=null,laneGuard=null;
+function playLanes(){
+ clearInterval(laneTimer);clearTimeout(laneGuard);
+ if(reduce){setLanes(STEPS.length);return}
+ setLanes(0);var n=0;
+ laneGuard=setTimeout(function(){
+  laneTimer=setInterval(function(){n++;setLanes(n);var st=STEPS[n-1],d=laneDots[st[0]][st[1]];d.classList.remove('pop');void d.offsetWidth;d.classList.add('pop');if(n>=STEPS.length)clearInterval(laneTimer)},110);
+  laneGuard=setTimeout(function(){if(n<STEPS.length){clearInterval(laneTimer);setLanes(STEPS.length)}},5000);
+ },800);
+}
+
+/* the delivery map: 300 dots, one per 10,000 people */
+var POLY=[[60.2,6.2],[73.8,18.3],[86,22.7],[90.5,28.2],[104.2,29.3],[99.6,43.6],[95.1,50.2],[88.2,59],[95.1,62.3],[95.1,81],[99.6,85.4],[92,93.1],[82.9,90.9],[72.3,89.8],[65.5,99.7],[55.6,99.7],[41.9,96.4],[28.3,90.9],[32.8,76.6],[32.8,61.2],[25.3,48],[7.8,41.4],[6.3,34.8],[19.2,30.4],[29.8,31.5],[30.6,21.6],[43.5,23.8],[53.3,16.1]];
+function inside(x,y){var c=false;for(var a=0,b=POLY.length-1;a<POLY.length;b=a++){var p=POLY[a],q=POLY[b];if(((p[1]>y)!==(q[1]>y))&&(x<(q[0]-p[0])*(y-p[1])/(q[1]-p[1])+p[0]))c=!c}return c}
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+var N=300,pts=[],sp=6;
+for(;sp>2;sp-=.02){pts=[];for(var row=0,y=4;y<102;y+=sp*.866,row++){for(var x=4+(row%2?sp/2:0);x<106;x+=sp){if(inside(x,y))pts.push([x,y])}}if(pts.length>=N)break}
+var Rg=rng(644);for(i=pts.length-1;i>0;i--){var j=Math.floor(Rg()*(i+1));var t=pts[i];pts[i]=pts[j];pts[j]=t}
+pts=pts.slice(0,N);
+var GRP=pts.map(function(p,k){return k<NA?'A':(k<NA+NB?'B':'C')});
+var mapEl=document.getElementById('map'),svgs='';
+pts.forEach(function(p,k){svgs+='<circle cx="'+p[0].toFixed(2)+'" cy="'+p[1].toFixed(2)+'" r="'+(sp*.36).toFixed(2)+'" fill="transparent" stroke="'+GCOL[GRP[k]]+'" stroke-width="'+(sp*.12).toFixed(2)+'"/>'});
+mapEl.innerHTML='<path d="M'+POLY.map(function(p){return p.join(' ')}).join(' L')+' Z" fill="none" stroke="var(--line)" stroke-width=".6"/>'+svgs;
+var mdots=[].slice.call(mapEl.querySelectorAll('circle')),order={A:[],B:[],C:[]};GRP.forEach(function(g,k){order[g].push(k)});
+function setMap(b){var m=model(b);['A','B','C'].forEach(function(g){var n=m[g.toLowerCase()];order[g].forEach(function(idx,k){mdots[idx].setAttribute('fill',k<n?GCOL[g]:'transparent')})})}
+setMap(240000);
+var mapTween=null;
+function playMap(){
+ if(mapTween){mapTween.kill();mapTween=null}
+ if(!window.gsap||reduce){setMap(240000);return}
+ setMap(0);var o={v:0};mapTween=gsap.to(o,{v:240000,duration:1.8,delay:.6,ease:'power2.inOut',onUpdate:function(){setMap(Math.round(o.v/8000)*8000)}});
+ var tw=mapTween;setTimeout(function(){if(tw.progress()<1){tw.progress(1).kill()}},3600);
+}
+
+/* the report chart: reach by group as the budget grows */
+(function(){
+ var svg=document.getElementById('chart'),W=1000,H=400,L=96,Rm=24,T=24,B=58,pw=W-L-Rm,ph=H-T-B;
+ function X(b){return L+b/456000*pw} function Y(p){return T+ph*(1-p)}
+ var h='';
+ [0,.5,1].forEach(function(p){h+='<line x1="'+L+'" x2="'+(L+pw)+'" y1="'+Y(p)+'" y2="'+Y(p)+'" stroke="var(--line)" stroke-width="1.5"/><text x="'+(L-14)+'" y="'+(Y(p)+8)+'" text-anchor="end" font-size="24" fill="var(--muted)">'+(p*100)+' %</text>'});
+ [0,100000,200000,300000,400000].forEach(function(b){h+='<text x="'+X(b)+'" y="'+(H-16)+'" text-anchor="middle" font-size="24" fill="var(--muted)">€'+(b/1000)+'k</text>'});
+ h+='<line x1="'+X(240000)+'" x2="'+X(240000)+'" y1="'+T+'" y2="'+(T+ph)+'" stroke="var(--ink)" stroke-width="2.5" stroke-dasharray="8 7"/><text x="'+(X(240000)-12)+'" y="'+(T+30)+'" text-anchor="end" font-size="24" font-weight="700" fill="var(--ink)">This campaign, €240k</text>';
+ var G=[['a',NA,'var(--gA)','Every day',60000],['b',NB,'var(--gB)','Some days',192000],['c',NC,'var(--gC)','Rarely online: nobody until €264k',300000]];
+ G.forEach(function(g){var d='';for(var b=0;b<=456000;b+=8000){var m=model(b);d+=(b?' L':'M')+X(b).toFixed(1)+' '+Y(m[g[0]]/g[1]).toFixed(1)}h+='<path d="'+d+'" fill="none" stroke="'+g[2]+'" stroke-width="6" stroke-linejoin="round"/>'});
+ h+='<circle cx="'+X(264000)+'" cy="'+Y(0)+'" r="10" fill="var(--gC)"/>';
+ h+='<text x="'+(X(264000)-16)+'" y="'+(Y(0)-16)+'" text-anchor="end" font-size="24" font-weight="700" fill="var(--ink)">Rarely online: none until €264k</text>';
+ svg.innerHTML=h;
+})();
+
+/* ---------- guilloché: the machine-turned engraving on French banknotes ---------- */
+function gband(R,A,n,K,pts){var out=[];for(var k=0;k<K;k++){var ph=k*2*Math.PI/K,d='';for(var t=0;t<=pts;t++){var a=t/pts*2*Math.PI,r=R+A*Math.sin(n*a+ph);d+=(t?'L':'M')+(r*Math.cos(a)).toFixed(2)+' '+(r*Math.sin(a)).toFixed(2)}out.push(d+'Z')}return out}
+function rosette(R,A,n,K,pts){var out=[];for(var k=0;k<K;k++){var ph=k*Math.PI/K,d='';for(var t=0;t<=pts;t++){var a=t/pts*2*Math.PI,r=R+A*Math.abs(Math.sin(n*a/2+ph));d+=(t?'L':'M')+(r*Math.cos(a)).toFixed(2)+' '+(r*Math.sin(a)).toFixed(2)}out.push(d+'Z')}return out}
+function paint(svg,paths,w){svg.innerHTML=paths.map(function(d,k){return '<path style="--k:'+k+'" stroke-width="'+w+'" d="'+d+'"/>'}).join('')}
+var COVER=gband(86,7,24,22,480).concat(gband(62,10,16,18,400),rosette(20,22,10,14,400));
+document.querySelectorAll('.guil-cover').forEach(function(g){paint(g,COVER,.8)});
+document.querySelectorAll('.guil-mini').forEach(function(g){paint(g,gband(80,8,18,14,300).concat(rosette(24,26,8,10,300)),1)});
+paint(document.getElementById('wmark'),gband(88,6,30,26,520).concat(gband(60,12,20,20,420),rosette(22,24,12,16,400)),1.2);
+document.querySelectorAll('.seal').forEach(function(g){g.innerHTML='<circle r="96" fill="var(--ground-rouge)"/><circle r="64" fill="#FFFFFF"/><circle r="34" fill="var(--ground-bleu)"/>'});
+
+/* headlines arrive word by word */
+document.querySelectorAll('.hx,.hx-xl').forEach(function(h){
+ if(h.children.length)return;
+ var words=h.textContent.trim().split(/\s+/);h.classList.remove('seq');h.setAttribute('aria-label',h.textContent.trim());
+ h.innerHTML=words.map(function(w,i){return '<span class="w" aria-hidden="true"><span style="--wi:'+i+'">'+w+'</span></span>'}).join(' ');
+});
+
+/* big figures count up when their beat appears */
+function countUps(b){
+ [].slice.call(b.querySelectorAll('[data-count]')).forEach(function(el){
+  var to=+el.dataset.count,dec=+(el.dataset.dec||0),pre=el.dataset.pre||'',suf=el.dataset.suf||'';
+  function show(v){el.textContent=pre+v.toFixed(dec)+suf}
+  if(!window.gsap||reduce){show(to);return}
+  var o={v:0};show(0);var tw=gsap.to(o,{v:to,duration:1.6,delay:.7,ease:'power3.out',onUpdate:function(){show(o.v)}});
+  setTimeout(function(){if(tw.progress()<1)tw.progress(1).kill();show(to)},3200);
+ });
+}
+
+/* ---------- speaker notes, one per beat ---------- */
+var NOTES=[
+ '<p>“A quick reminder of <strong>the exercise</strong>, in case that part of Session 9 slipped by. You work for <strong>the government</strong>. You used generative AI to make an ad, the words and the picture, teaching <strong>money basics</strong> to people on lower incomes. Then an algorithm decides who sees it, trying to reach the most people for the least money. Our job: <strong>find what could go wrong</strong>, and map who gets hurt and how badly. The brief just says “the government”. I live in France, so I made it the <strong>French</strong> government, which really does run financial education through the Banque de France. This poster is an example I made; it isn’t a real campaign.”</p>',
+ '<p>“So the ad passes through <strong>two machines</strong>. The writer makes the poster. The buyer buys space on screens, like these phones in the métro. And the ad is meant for people like those queueing at the <strong>CAF</strong>. Look at the red line: nobody checks the ad <strong>in between</strong>. And it’s worth doing: 9.8 million people live below the poverty line, and <strong>76 experiments</strong> show financial education works.”</p>',
+ '<p>“Session 9 asked us to find the risks and map who gets hurt. Each risk starts in one of the machines. The writer brings five, like a <strong>stereotyped picture</strong> or a <strong>wrong figure</strong>. The buyer brings three, and they’re the serious ones. Each carries the lecture’s tags: inherited or added, <strong>deliberate or accidental</strong>. That last tag decides the fix.”</p>',
+ '<p>“Here’s the mechanism in plain words. Every time an ad appears on someone’s screen, the ministry pays a small fee. Someone on their phone all day is cheap: <strong>8 cents</strong>. Someone who’s rarely online costs <strong>four times more</strong>. The buyer has <strong>240,000 euros</strong> and is told to reach as many people as possible. Watch the order it buys in.” (Pause.) “Blue first, then teal, and the money runs out <strong>before a single orange circle</strong>. Never reached.”</p>',
+ '<p>“Here’s where the ad landed, and the report the ministry would get. 2.25 million people, 75 percent, 11 cents each. <strong>Everything is green.</strong>”</p>',
+ '<p>“Now split it by group. The people who are rarely online, the ones this campaign is for: <strong>zero percent</strong>. And this has happened before: a science-careers ad reached fewer women, because <strong>younger women</strong> cost more to reach. Session 9 calls this <strong>optimising the wrong metric</strong>. The algorithm did its job. The job was wrong. France’s motto promises <strong>égalité</strong>; this buyer delivered zero.”</p>',
+ '<p>“This is the map the exercise asked for. Each row is <strong>who gets hurt</strong>, and the columns run from low to high <strong>severity</strong>, likelihood times impact. Every high-severity risk lands on <strong>citizens or the ministry</strong>. The platform never goes above medium, because it gets paid either way.” (If asked, click any risk to open its sheet.)</p>',
+ '<p>“So how do we fix it? Session 9’s rule: it depends on whether anyone <strong>meant it</strong>. Deliberate risks need a <strong>policy and an owner</strong>. Accidental ones need <strong>checking and monitoring</strong>. And the French angle: go offline too, through <strong>CAF offices</strong>, which handle RSA and housing aid, and the 2,865 <strong>France Services</strong> counters.”</p>',
+ '<p>“So my recommendation comes down to two things. Put a <strong>person between the two machines</strong>, so the ad goes out checked, labelled and linked to the official Banque de France site. And judge the buyer by <strong>who it reaches</strong>, not by its average. And that raises the next question: what if agents ran this whole campaign?”</p>',
+ '<p>Backup. If someone asks “how much would it take to reach everyone?”: the chart shows nobody rarely online is reached until <strong>€264,000</strong>, and everyone only at <strong>€456,000</strong>.</p>',
+ '<p>Backup. Every small number in the deck links here.</p>',
+ '<p>(Video.) <strong>Let it play by itself</strong> (about 90 seconds, captions, no sound): Mistral, France’s own AI company, and why to build the agent loop on it. Press Next when it ends.</p>',
+ '<p>“Now let’s look ahead. Next week’s <strong>Session 10 exercise</strong> is to redesign a campaign workflow with agents, so let me do it for this same French campaign. Today it moves <strong>one team at a time</strong>: brief, creative, legal, media, launch, analytics. Two problems. Legal finds an issue and it goes <strong>back to creative</strong>. And analytics judges the campaign <strong>after it ends</strong>, when the money’s gone. The zero percent from slide 2 would only show up there.”</p>',
+ '<p>“The lecture says don’t just <strong>agentize</strong>, speeding up each step; <strong>reinvent</strong> the workflow. So: the manager sets the <strong>goal and the floors</strong>. Then four agents run <strong>one loop</strong>: create, check, buy, measure, and the measure agent feeds back into create every day. One thing stays human: <strong>the gate</strong> before any money is spent. New opportunities: legal checks inside the loop, results while you can still act, variants per region, and kits for CAF counters.”</p>',
+ '<p>“So what is the <strong>human role</strong>? Not doing each step, but <strong>guarding the loop</strong>. An <strong>approval gate</strong> before spend. <strong>Exceptions</strong>: when a group falls below its floor, a person decides. <strong>Audit</strong> every week. And what only people do: strategy, taste, and the relationships with CAF and the Banque de France. The new risk is <strong>linked agents</strong>: one wrong figure spreads into every ad. That’s why the gate sits right after the check. And my recommendation: build these agents on a <strong>French, open-weight stack</strong>, so the ministry can inspect the model and keep data in France. Here is one French option.”</p>'
+];
+NOTES.push('<p>“Merci, et vive la France ! To sum up: keep a person between the machines, judge the buyer by who it reaches, and build the agents on a stack France can own. Happy to take questions, or we can ask Claude live.” (Press Q.)</p>');
+
+/* ---------- navigation: slides of beats ---------- */
+var slides=[].slice.call(document.querySelectorAll('.slide')),beats=slides.map(function(s){return [].slice.call(s.querySelectorAll('.beat'))});
+var cur=0,step=0,TOK=['s1','s2','s3','s4','fin','a1','a2'];
+var notesEl=document.getElementById('notes'),notesB=document.getElementById('notesB'),pos=document.getElementById('pos');
+function render(prevKey){
+ slides.forEach(function(s,i){s.classList.toggle('on',i===cur)});
+ beats.forEach(function(bs,i){bs.forEach(function(b,k){b.classList.toggle('on',i===cur&&k===step)})});
+ document.querySelectorAll('[data-go]').forEach(function(b){if(+b.dataset.go===cur)b.setAttribute('aria-current','true');else b.removeAttribute('aria-current')});
+ document.getElementById('prev').disabled=cur===0&&step===0;
+ document.getElementById('next').disabled=cur===slides.length-1&&step===beats[cur].length-1;
+ pos.textContent=(cur<3?'Slide '+(cur+1)+' of 3':(cur===3?'Slide 4: agentic workflow':(cur===4?'Video and close':'Annexe '+(cur===5?'A':'B'))))+(beats[cur].length>1?', part '+(step+1)+' of '+beats[cur].length:'');
+ var b=beats[cur][step];notesEl.innerHTML='<h4>'+slides[cur].dataset.name+', part '+(step+1)+'</h4>'+NOTES[+b.dataset.notes];
+ var ev=document.getElementById('epiV');if(ev){if(slides[cur].classList.contains('epi')&&step===0){if(prevKey!==cur+':'+step){try{ev.currentTime=0}catch(x){}var pp=ev.play();if(pp&&pp.catch)pp.catch(function(){});document.getElementById('epiC').textContent='Pause'}}else{ev.pause()}}
+ if(prevKey!==cur+':'+step){if(b.dataset.hook==='lanes')playLanes();if(b.dataset.hook==='map')playMap();countUps(b)}
+ var bqT=document.getElementById('bqT');if(!bqT.dataset.d)bqT.dataset.d=bqT.textContent;bqT.textContent=slides[cur].dataset.q||bqT.dataset.d;document.getElementById('bqL').textContent=slides[cur].dataset.q?'La question, séance 10':'La question';document.getElementById('bnS').textContent=slides[cur].dataset.q?'MKTG 644, Session 10':'MKTG 644, Session 9';
+ paintTl();
+ var onVid=slides[cur].classList.contains('epi');stage.classList.toggle('qr-off',onVid&&step===0);stage.classList.toggle('qr-big',onVid&&step===1);
+ closeSheet();
+ try{history.replaceState(null,'','#'+TOK[cur])}catch(e){}
+}
+var tlEl=document.getElementById('tl');
+tlEl.innerHTML=beats.map(function(bs,i){return '<span class="tlg" style="--n:'+bs.length+'" title="'+slides[i].dataset.name+'">'+bs.map(function(b,k){return '<i data-s="'+i+'" data-k="'+k+'"></i>'}).join('')+'</span>'}).join('');
+tlEl.addEventListener('click',function(e){var t=e.target.closest('i');if(t)go(+t.dataset.s,+t.dataset.k)});
+function paintTl(){[].slice.call(tlEl.querySelectorAll('i')).forEach(function(t){var a=+t.dataset.s,k=+t.dataset.k;t.className=(a<cur||(a===cur&&k<step))?'past':((a===cur&&k===step)?'cur':'')})}
+function go(n,s){var k=cur+':'+step;cur=Math.max(0,Math.min(slides.length-1,n));step=s==='end'?beats[cur].length-1:(s||0);render(k)}
+function next(){if(step<beats[cur].length-1){var k=cur+':'+step;step++;render(k)}else if(cur<slides.length-1)go(cur+1,0)}
+function prev(){if(step>0){var k=cur+':'+step;step--;render(k)}else if(cur>0)go(cur-1,'end')}
+document.getElementById('next').addEventListener('click',next);
+document.getElementById('prev').addEventListener('click',prev);
+document.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){go(+b.dataset.go,0)})});
+notesB.addEventListener('click',function(){var on=notesEl.hidden;notesEl.hidden=!on;notesB.setAttribute('aria-pressed',String(on))});
+document.addEventListener('click',function(e){
+ var r=e.target.closest('[data-r]');if(r){openSheet(r.dataset.r);return}
+ var a=e.target.closest('a.ref');if(a){e.preventDefault();go(6,+a.dataset.src>18?1:0)}
+});
+document.addEventListener('keydown',function(e){
+ if(e.metaKey||e.ctrlKey||e.altKey)return;
+ var tag=e.target&&e.target.tagName;
+ if(e.key==='Escape'){closeSheet();if(!chatEl.hidden)toggleChat(false);return}
+ if(tag==='TEXTAREA')return;
+ if((e.key==='q'||e.key==='Q')&&!askB.hidden){toggleChat(true);e.preventDefault();return}
+ if(tag==='INPUT'&&/Arrow|Page|Home|End/.test(e.key))return;
+ if((e.key===' '||e.key==='Enter')&&(tag==='BUTTON'||tag==='A'||tag==='INPUT'))return;
+ if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){next();e.preventDefault()}
+ else if(e.key==='ArrowLeft'||e.key==='PageUp'){prev();e.preventDefault()}
+ else if(e.key==='n'||e.key==='N'){notesB.click()}
+ else if(/^[1-3]$/.test(e.key)){go(+e.key-1,0)}
+ else if(e.key==='4'){go(3,0)}
+ else if(e.key==='e'||e.key==='E'){go(4,0)}
+});
+
+document.getElementById('epiC').addEventListener('click',function(e){e.stopPropagation();var v=document.getElementById('epiV');if(v.paused){v.play();this.textContent='Pause'}else{v.pause();this.textContent='Play'}});
+/* ---------- ask Claude: live Q&A grounded in this deck ---------- */
+/*@COURSE@*/var COURSE=[];
+
+var chatEl=document.getElementById('chat'),askB=document.getElementById('askB'),log=document.getElementById('chatLog'),form=document.getElementById('chatF'),qIn=document.getElementById('chatQ'),sendB=document.getElementById('chatSend'),sugg=document.getElementById('chatSugg');
+var sample=null,busy=false,turns=[];
+function strip(h){var d=document.createElement('div');d.innerHTML=h;return d.textContent.replace(/\s+/g,' ').trim()}
+function cites(t){return t.replace(/\{(\d+)\}/g,' [$1]')}
+var CTX=['THE EXERCISE (Session 9 slide): you are employed by the government; you used generative AI to create an ad (copy and image) for a financial-literacy campaign aimed at lower-income citizens; an automated online ad-targeting algorithm targets them, balancing reach in the target group against total cost. Identify the risks and map them by stakeholder and severity, in at most 3 slides.',
+ 'SESSION 9 FRAMEWORK: risk types are bias, privacy, IP and content. Severity = likelihood x impact, each scored 1 to 3 (Alan’s judgement, not measured). Bands: low 1-2, medium 3-4, high 6-9. Tags: inherited (comes with the vendor model) or added (our own choices); deliberate (someone chose it) or accidental (nobody meant it). Deliberate risks need a policy and a named owner; accidental risks need checking and monitoring. Bias source 3: optimising the wrong metric; you must disaggregate performance by subgroup to see it.',
+ 'THE RISKS: '+RISKS.map(function(r){return r.id+' '+r.t+' ('+r.tags.join(', ')+'). Severity by stakeholder: '+Object.keys(r.sc).map(function(k){var v=r.sc[k];return k+' '+v[0]+'x'+v[1]+'='+(v[0]*v[1])}).join(', ')+'. Why: '+cites(r.why)+' Control: '+cites(r.ctl)}).join(' | '),
+ 'STAKEHOLDER KEYS: cit = target citizens, min = ministry, plat = platform, soc = society.',
+ 'MOCK MODEL (not real data): target group 3.0 M people in three groups: online every day 1.5 M at €0.08 per person, online some days 0.9 M at €0.16, rarely online 0.6 M at €0.32. Budget €240,000; the buyer buys the cheapest first. Result: every-day 100 %, some-days 83 %, rarely online 0 %. Reported: 2.25 M people, 75 % reach, €0.11 per person, all green against targets. Nobody rarely online is reached until €264,000; everyone is reached at €456,000.',
+ 'ALAN’S TALK: '+NOTES.map(strip).join(' '),
+ 'RECOMMENDATIONS: put a person between the two machines (check every figure, picture and word, label the ad as AI-made, link to mesquestionsdargent.fr); judge the buyer by who it reaches, with a weekly report by income group and a 60 % floor per group; go offline too via CAF offices and 2,865 France Services counters.',
+ 'EPILOGUE VIDEO (Mistral AI is a French company: Mistral AI SAS, registered in Paris on 28 Apr 2023, per the French state register [26]. Video 91 s, checked on mistral.ai on 6 Nov 2026): on 29 Oct 2026 Mistral opened the weights of Mistral Large 4 (Le Chonk), a 1-trillion-parameter multimodal model (its Hugging Face name, 1T-A52B, indicates about 52B parameters active at a time), which Mistral says was trained from scratch on European infrastructure; download from huggingface.co/mistralai; licence is a modified MIT (free to use and build on; a company selling the model itself as a service needs a commercial licence). 8 Sep 2026: €3 billion Series D at a valuation above €21 billion, led by Samsung Electronics; 125+ enterprises in 20 countries. Le Chonk needs data-centre hardware; Mistral says Mistral Small 3.1 (Apache 2.0) runs on a Mac with 32 GB RAM. Mistral Vibe is an open-source (Apache 2.0) terminal agent at github.com/mistralai/mistral-vibe. Mistral’s free assistant runs on web and mobile (its pricing page now calls it Vibe). Studio, expanded on 5 Nov 2026, builds agents, workflows and apps. Benchmark claims are Mistral’s own.',
+ 'SESSION 10 EXERCISE SLIDE (Alan’s answer): redesign the campaign workflow (today: marketing manager writes brief, creative drafts, legal reviews with revision cycles, media targets and buys, launch, analytics evaluates after the campaign ends). Alan reinvents it: a person sets the goal and floors (every income group at least 60 %, within €240,000); four agents run one loop: Create (generate archetype), Check (extract), Buy (analyse, with group floors), Measure (analyse, daily reach by group, feeding back to Create); a human approval gate between Check and Buy. New opportunities: legal checks inside the loop, daily results, variants per region and language, kits for CAF and France Services. Human role: approval gate, exception handling when a group falls below its floor, weekly audit and override, and strategy, taste and stakeholder relationships. Risk: linked agents and chained vulnerabilities (Session 10).',
+ 'THE TWO EXERCISES. Session 9 exercise (slide 36 of the Session 9 deck): you are employed by the government; you used generative AI to create an ad (copy and image) for a campaign on financial literacy aimed at lower-income citizens; the ads are targeted through an automated online ad-targeting algorithm that balances reach among the target group and total costs; identify the risks, map them by stakeholder and severity, max 3 slides. Alan answers it with slides 1 to 3. Session 10 exercise (slide 24 of the Session 10 deck): redesign a campaign workflow (marketing manager writes campaign brief; creative team drafts concepts; legal team reviews and the revision cycle starts; media team decides on targeting and buys placements; campaign launches; analytics team evaluates results after the campaign ends): new opportunities? human role? Alan answers it with slide 4, using the same French campaign, and ends with the Mistral video and his recommendation.',
+ 'PROF ERNST OSINGA’S COURSE SLIDES, MKTG 644 AI-Powered Marketing (course material, Sessions 1 to 10; [n] is the slide number):\n\n'+COURSE.map(function(c){return 'SESSION '+c.n+': '+c.t+'\n'+c.x}).join('\n\n'),
+ 'SOURCES: '+Object.keys(SRC).map(function(k){return '['+k+'] '+SRC[k][0]}).join('; ')].join('\n\n');
+var RULES='You are Claude, taking audience questions live during Alan Asman’s class presentation (MKTG 644 AI-Powered Marketing, Session 9: AI risk and governance, Prof Ernst Osinga). Your answer appears on a projector for about 35 classmates. Answer in 2 to 4 short sentences of plain English: no markdown, no headings, no bullet symbols. Base the answer on the deck facts below and cite source numbers in square brackets, like [4]. For course concepts, use Prof Osinga’s course slides below (Sessions 1 to 10) and say which session and slide, like (Session 10, slide 37). Campaign figures come from a mock model and the risk scores are Alan’s judgement; say so when it matters. If a question goes beyond the deck, say that in one clause, then answer briefly from general knowledge without inventing statistics. Refer to Alan in the third person. Always answer in English, whatever language the question is in. If the question is not in English (for example French), begin with “You asked: ” and a one-line English translation of the question, then answer.\n\nABOUT THIS PANEL: you are answering inside the deck’s “Ask Claude” panel. The deck can read your answers aloud with the computer’s voice when the presenter switches Voice on, and questions can be typed or dictated with Mac Dictation, in English or French. You write the words; the computer speaks them. So never say you cannot speak or reply by voice: if Voice is on, your answer is being read aloud right now. If asked how the panel works, explain this. Write for the ear as well as the eye: short sentences, no symbols that sound odd read aloud.\n\nDECK FACTS\n\n'+CTX;
+function msg(cls,text){var d=document.createElement('div');d.className='m '+cls;d.textContent=text;log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+function toggleChat(on){chatEl.hidden=!on;if(on){qIn.focus();wake()}else{hush();askB.focus()}}
+/* voice: read answers aloud with the computer's own voices */
+var voiceB=document.getElementById('voiceB'),voiceOn=false,voice=null,TTS='speechSynthesis' in window;
+var voiceS=document.getElementById('voiceS');
+function pickVoice(){var vs=speechSynthesis.getVoices();if(!vs.length)return;
+ var en=vs.filter(function(v){return /^en/.test(v.lang)});
+ function rank(v){return /Premium/.test(v.name)?0:(/Enhanced/.test(v.name)?1:(v.localService?2:3))}
+ en.sort(function(a,b){return rank(a)-rank(b)||a.name.localeCompare(b.name)});
+ var saved=null;try{saved=localStorage.getItem('dossier-voice')}catch(e){}
+ var want=saved||'Arthur (Enhanced)';
+ voice=en.filter(function(v){return v.name===want})[0]||en.filter(function(v){return /^Arthur/.test(v.name)})[0]||en[0]||null;
+ voiceS.innerHTML=en.slice(0,40).map(function(v){return '<option'+(voice&&v.name===voice.name?' selected':'')+'>'+v.name.replace(/</g,'')+'</option>'}).join('');
+ voiceS.hidden=!en.length}
+function hush(){if(TTS)speechSynthesis.cancel()}
+function speak(t){if(!TTS||!voiceOn)return;hush();
+ (t.replace(/\[\d+(,\s*\d+)*\]/g,'').match(/[^.!?]+[.!?]*/g)||[]).forEach(function(sn){sn=sn.trim();if(!sn)return;var u=new SpeechSynthesisUtterance(sn);if(voice){u.voice=voice;u.lang=voice.lang}u.rate=1;speechSynthesis.speak(u)})}
+if(TTS){voiceB.hidden=false;pickVoice();speechSynthesis.addEventListener('voiceschanged',pickVoice);
+ voiceS.addEventListener('change',function(){var n=voiceS.value;voice=speechSynthesis.getVoices().filter(function(v){return v.name===n})[0]||voice;try{localStorage.setItem('dossier-voice',n)}catch(e){}if(voiceOn)speak('Bonjour. This is the voice for the questions.')});
+ voiceB.addEventListener('click',function(){voiceOn=!voiceOn;voiceB.setAttribute('aria-pressed',String(voiceOn));voiceB.textContent='Voice: '+(voiceOn?'on':'off');if(!voiceOn)hush()})}
+askB.addEventListener('click',function(){toggleChat(chatEl.hidden)});
+document.getElementById('chatX').addEventListener('click',function(){toggleChat(false)});
+sugg.addEventListener('click',function(e){var b=e.target.closest('button');if(b){qIn.value=b.textContent;ask()}});
+form.addEventListener('submit',function(e){e.preventDefault();ask()});
+qIn.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ask()}});
+var COPY={rate_limited:'Too many questions at once. Try again in a minute.',session_expired:'Sign in to claude.ai again, then ask.',refused:'Claude did not answer that one. Try rewording it.',empty_completion:'No answer came back. Try a shorter question.',prompt_too_large:'That conversation is too long. Reload the page to start fresh.'};
+function ask(){
+ var q=qIn.value.trim();if(!q||busy||!sample)return;
+ busy=true;sendB.disabled=true;qIn.value='';sugg.hidden=true;hush();
+ msg('u',q);var bub=msg('a think','Thinking…');
+ var where='The audience is looking at: '+slides[cur].dataset.name+', part '+(step+1)+'. Voice is '+(voiceOn?'ON: this answer will be read aloud.':'off: this answer is shown as text only.');
+ turns.push({role:'user',content:where+'\n\nQuestion: '+q});
+ var input=[{role:'user',content:RULES}].concat(turns.slice(-8));
+ sample(input,{cache:false,effort:'low',onText:function(u){bub.classList.remove('think');bub.textContent=u.text;log.scrollTop=log.scrollHeight}})
+  .then(function(r){turns.push({role:'assistant',content:r.text});speak(r.text)})
+  .catch(function(e){
+   turns.pop();
+   if(e&&e.text){bub.classList.remove('think');bub.textContent=e.text}else bub.remove();
+   if(e&&/^(not_granted|sampling_disabled|not_declared|capability_disabled|capability_removed)$/.test(e.code)){msg('err','Claude is not available in this view.');askB.hidden=true;form.hidden=true}
+   else if(!e||e.code!=='cancelled')msg('err',COPY[e&&e.code]||'The answer was interrupted. Ask again.');
+  })
+  .then(function(){busy=false;sendB.disabled=false;qIn.focus()});
+}
+if(window.claude&&typeof window.claude.use==='function'){
+ window.claude.use('sample').then(function(fn){if(fn){sample=fn;askB.hidden=false}}).catch(function(){});
+}
+
+/* the nav hides itself while presenting and comes back on any mouse move */
+var nav=document.getElementById('nav'),idleT=null;
+function wake(){nav.classList.remove('idle');clearTimeout(idleT);idleT=setTimeout(function(){if(!nav.matches(':hover')&&!nav.contains(document.activeElement)&&notesEl.hidden&&chatEl.hidden)nav.classList.add('idle')},2600)}
+['mousemove','pointerdown','touchstart'].forEach(function(ev){document.addEventListener(ev,wake,{passive:true})});
+document.addEventListener('keydown',function(){nav.classList.add('idle')});
+wake();
+
+/* fit the stage */
+var vp=document.getElementById('vp'),stage=document.getElementById('stage');
+function fit(){var r=vp.getBoundingClientRect();stage.style.setProperty('--s',Math.min(r.width/1920,r.height/1080).toFixed(4))}
+window.addEventListener('resize',fit);if(window.ResizeObserver)new ResizeObserver(fit).observe(vp);fit();
+
+stage.classList.add('init');
+var start=TOK.indexOf((location.hash||'').replace('#',''));
+go(start>0?start:0,0);
+requestAnimationFrame(function(){requestAnimationFrame(function(){stage.classList.remove('init')})});
+})();
+</script>
