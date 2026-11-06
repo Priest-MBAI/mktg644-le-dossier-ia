@@ -1,4 +1,4 @@
-# Le Dossier IA: speaker script (about 5 minutes)
+# Le Dossier IA: speaker script (about 8 minutes, including the 91-second video)
 
 **How to drive it.** There's no control bar: use the **right and left arrows** (or space). Each slide has three parts, so it's **two clicks per slide**, and each part plays by itself. The thin strip along the top of the bottom band is your **timeline**: blue segments are done, red is where you are, grey is still to come, with a gap between sections (slides 1–3, slide 4, the video and Merci, the annexes). Click a segment to jump there. Keys: **F** full screen (press again to leave), **N** notes, **Q** Ask Claude, **1–3** slides, **4** slide 4, **E** the video.
 
@@ -132,7 +132,7 @@ The video runs **91 seconds by itself**, silent, with large captions. It starts 
 
 ## Questions
 
-**Ask Claude live (press Q).** The panel answers in two to four sentences, using only the deck's risks, scores, mock figures and 18 sources, with source numbers in brackets. Read the answer aloud or let the room read it. The first question asks you to **Allow**: do that before class (see the guide below).
+**Ask Claude live (press Q).** The panel answers in two to four sentences, using the deck (risks, scores, mock figures, 27 sources), both exercises and Prof Osinga's slides, with source numbers or slide numbers in brackets. Read the answer aloud or let the room read it. The first question asks you to **Allow**: do that before class (see the guide below).
 
 **If you'd rather answer yourself:**
 
@@ -141,17 +141,19 @@ The video runs **91 seconds by itself**, silent, with large captions. It starts 
 - **Are the campaign numbers real?** No. They come from the toy model on slide 2, and the slide says "mock".
 - **How much would it take to reach everyone?** Annexe A: nobody rarely online is reached until **€264,000**, and everyone only at **€456,000**.
 - **Why France, when the brief says "the government"?** I live there, and France has a real national financial-education strategy run by the Banque de France, so the scenario fits.
-- **Backup slides:** A is the mock campaign report with the chart; B is the 18 sources and photo credits.
+- **Does the chained-vulnerability risk apply to today's workflow too?** Yes. Session 10 (slide 34) calls it chained vulnerabilities. The two machines on slide 1 are already a two-link chain with no human check, so one wrong figure ends up in every ad. Slide 4 adds more links, which is why the gate sits right after Check.
+- **Is an agentic organization plausible for marketing?** (Session 10, slide 38.) Partly. Marketing suits agents: high-volume tasks, rich data, fast feedback (slide 8). But system integration, linked-agent risks and the supervision-versus-autonomy tension (slides 13, 34, 37) keep people at the gates, as on slide 4.
+- **Backup slides:** A is the mock campaign report with the chart; B is the 27 sources over two pages (the Mistral and Session 10 sources are on the second), plus photo credits.
 
 ---
 
 ## Ask Claude: how it works (for you and the team)
 
-1. **Open the claude.ai link**, signed in to your Claude account. The button only appears there, not in the downloaded HTML file.
+1. **Open the claude.ai link**, signed in to your Claude account. Ask Claude only works there, not in the downloaded HTML file.
 2. **Before class, ask one test question.** The first question shows a permission prompt; click **Allow**. Each question uses the asker's own Claude usage.
-3. **In class:** move the mouse, click **Ask Claude** (or press **Q**), tap a suggested question or type one, press Enter. An answer takes about 5 to 30 seconds.
+3. **In class:** press **Q** to open the panel, tap a suggested question or type one, press Enter. An answer takes about 5 to 30 seconds. **Esc** closes it.
 4. **Ask by voice (Mac Dictation):** turn it on once in **System Settings → Keyboard → Dictation**, and add **French (France)** under its languages. In the deck, click in the question box, press the **🌐 Fn key twice**, speak, then press **Enter**. You can ask in French: Claude starts with "You asked:" and an English translation, then answers in English.
-5. **Voice:** click **Voice: off** in the panel's top bar to switch it on, and Claude's answers are read aloud by the computer's own voice. Turn the room's speakers up before class. Combine it with Dictation (step 4) and the whole exchange is spoken.
+5. **Voice:** click **Voice: off** in the panel's top bar to switch it on, and Claude's answers are read aloud by the computer's own voice. The menu next to it picks the voice; it starts on **Arthur (Enhanced)** and remembers your choice. Turn the room's speakers up before class. Combine it with Dictation (step 4) and the whole exchange is spoken.
 6. **What it knows:** the deck (risks, scores, mock model, notes, sources, the Mistral facts), both exercises, Prof Osinga's slides for all ten sessions, and which slide is on screen. It cites them, e.g. "(Session 10, slide 37)". It doesn't browse the web and forgets everything when the page reloads.
 7. **Check it:** Claude can be wrong. Its source numbers point to Annexe B.
-8. **Teammates:** the artifact is private. Share it from the page's **Share** menu; each teammate must be signed in, and their questions use their own account.
+8. **Classmates:** the deck is shared through your link, which the QR code opens. Each person must be signed in to Claude for Ask Claude to work, and their questions use their own account. The code is public at github.com/Priest-MBAI/mktg644-le-dossier-ia.
